@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 
 interface StatsProps {
+  // eslint-disable-next-line @typescript-eslint/ban-types
   className?: String,
 }
 

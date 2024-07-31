@@ -1,30 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header/Header';
+import HomePage from './components/HomePage/HomePage';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
-import HeroSection from './components/Hero/HeroSection';
+import Layout from './components/Layout/Layout';
 import './App.css'
-import MainSection from './components/Testimonials/MainSection';
-import LocationSection from './components/Location/LocationSection';
 
-const App = () => {
+
+const App: React.FC = () => {
   return (
     <Router>
-      <div className='bg-slate-900'>
-      </div>
-      <Header />
-      <HeroSection/>
-      <MainSection />
-      <LocationSection />
-        
       <Routes>
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        {/* Add other routes here */}
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          {/* Add other routes here */}
+        </Route>
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

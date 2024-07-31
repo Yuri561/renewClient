@@ -26,7 +26,7 @@ const features = [
 
 const FeatureCards: React.FC = () => {
   return (
-    <div className="grid md:grid-cols-3 gap-4 z-50 relative md:px-4 max-md:mt-12 mb-12 lg:mt-[5rem]">
+    <div className="grid md:grid-cols-3 gap-4 z-10 relative md:px-4 max-md:mt-12 mb-12 lg:mt-[5rem]">
       {features.map((feature, index) => (
         <FeatureCard key={index} title={feature.title} description={feature.description} Icon={feature.Icon} link={feature.link} className={`feature-card feature-card-${index + 1}`} />
       ))}
