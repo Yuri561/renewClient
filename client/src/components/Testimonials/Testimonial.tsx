@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface TestimonialProps {
   name: string;
@@ -32,13 +35,13 @@ const Testimonial: React.FC<TestimonialProps> = ({ name, text, image, highlight 
   return (
     <div
       ref={testimonialRef}
-      className={`flex sm:items-center max-sm:flex-col-reverse  rounded-lg ${highlight ? 'shadow-lg bg-white' : 'bg-blue-50'} testimonial`}
+      className={`testimonial-card ${highlight ? 'highlight' : ''}`}
     >
-      <div className="mr-3">
-        <h4 className="text-gray-800 text-base font-bold">{name}</h4>
-        <p className="text-sm text-gray-500 mt-2">{text}</p>
+      <div className="testimonial-content">
+        <h4 className="testimonial-name">{name}</h4>
+        <p className="testimonial-text">{text}</p>
       </div>
-      <img src={image} className="w-16 h-16 rounded-full max-sm:mb-2" alt={name} />
+      <img src={image} className="testimonial-image" alt={name} />
     </div>
   );
 };

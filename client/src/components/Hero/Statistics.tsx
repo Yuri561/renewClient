@@ -17,7 +17,7 @@ const Statistics: React.FC<StatsProps> = ({className}) => {
           <h5 className="text-gray-800 font-bold text-xl mb-2">500+</h5>
           <p className="text-gray-600">Clients Assisted</p>
         </div>
-        <div className="flex flex-col items-center bg-green-700 rounded p-9 text-center">
+        <div className="flex flex-col items-center bg-slate-700 rounded p-9 text-center">
           <h5 className="text-white font-bold text-xl mb-2">100+</h5>
           <p className="text-white">Trusted Therapists</p>
         </div>

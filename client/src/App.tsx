@@ -6,13 +6,18 @@ import SignUp from './components/SignUp/SignUp';
 import HeroSection from './components/Hero/HeroSection';
 import './App.css'
 import MainSection from './components/Testimonials/MainSection';
+import LocationSection from './components/Location/LocationSection';
 
 const App = () => {
   return (
     <Router>
+      <div className='bg-slate-900'>
+      </div>
       <Header />
       <HeroSection/>
-      <MainSection/>
+      <MainSection />
+      <LocationSection />
+        
       <Routes>
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
