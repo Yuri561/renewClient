@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroContent: React.FC = () => {
   return (
-    <div className="max-md:order-1 max-md:text-center z-50 relative ">
+    <div className="max-md:order-1 max-md:text-center z-10 relative ">
       <h2 className="text-slate-200 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]">
         <span className="text-blue-600">Empower</span> Your Mind with <span className="text-blue-600">Professional</span> Care
       </h2>

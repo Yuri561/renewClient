@@ -9,7 +9,7 @@ interface StatsProps {
 const Statistics: React.FC<StatsProps> = ({className}) => {
   return (
     <div className="mt-[8rem] ">
-      <div className={`grid sm:grid-cols-3 gap-4 items-center feature-stats  ${className}`}>
+      <div className={`grid sm:grid-cols-1 mt-[25px] md:grid-cols-2 md:mt-[30px] gap-4 items-center feature-stats  ${className}`}>
         <div className="flex flex-col items-center bg-blue-700 rounded p-9 text-center">
           <h5 className="text-white font-bold text-xl mb-2">10+</h5>
           <p className="text-white">Years of Service</p>

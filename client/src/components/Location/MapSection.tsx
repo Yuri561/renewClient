@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import anime from 'animejs/lib/anime.es.js';
 import './styles.css';
 
 // Fix the default icon issue with React-Leaflet and Webpack
@@ -24,18 +25,73 @@ const listItems = [
 const renderListItems = (items: string[]) => {
   return items.map((item, index) => (
     <li key={index} className="text-white text-sm mt-4 flex items-start">
-      <div className="bg-blue-600 text-white rounded-full w-10 h-10 p-5 flex items-center justify-center mr-4">{index + 1}</div>
+      <div className="bg-blue-600 p-5 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">{index + 1}</div>
       <span>{item}</span>
     </li>
   ));
 };
 
 const MapSection: React.FC = () => {
+  useEffect(() => {
+    // Wrap every letter in a span
+    const textWrapper = document.querySelector('.text-wrapper');
+    if (textWrapper && textWrapper.textContent) {
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    }
+
+    anime.timeline({ loop: true })
+       .add({
+    targets: '.ml5 .line',
+    opacity: [0.5,1],
+    scaleX: [0, 1],
+    easing: "easeInOutExpo",
+    duration: 700
+  }).add({
+    targets: '.ml5 .line',
+    duration: 600,
+    easing: "easeOutExpo",
+    translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+  }).add({
+    targets: '.ml5 .ampersand',
+    opacity: [0,1],
+    scaleY: [0.5, 1],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  }).add({
+    targets: '.ml5 .letters-left',
+    opacity: [0,1],
+    translateX: ["0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=300'
+  }).add({
+    targets: '.ml5 .letters-right',
+    opacity: [0,1],
+    translateX: ["-0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  }).add({
+    targets: '.ml5',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  }, []);
+
   return (
     <div className="max-w-8xl p-5 bg-slate-900 max-md:max-w-xl mx-auto font-[sans-serif] my-4">
-      <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-white text-3xl font-extrabold text-center mb-6">Where Can You Find Us</h2>
-        <p className="text-white text-sm">Discover our location and easily find us using the map below. We are dedicated to providing a supportive environment for your mental health journey.</p>
+     
+      <div className="text-center ml5 max-w-2xl mx-auto">
+        <span className="text-wrapper">
+          <span className="line line1"></span>
+          <span className="letters letters-left"><h1>Location</h1></span>
+          <span className="letters ampersand">&amp;</span>
+          <span className="letters letters-right">Support</span>
+          <span className="line line2"></span>
+        </span>
       </div>
       <div className="mt-16 grid md:grid-cols-2 items-center gap-16">
         <div style={{ height: '400px', width: '100%' }} className="rounded-md shadow-[0_14px_40px_-11px_rgba(93,96,127,0.2)] z-10">
