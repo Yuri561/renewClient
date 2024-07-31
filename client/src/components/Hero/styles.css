@@ -1,0 +1,56 @@
+:root {
+    --background-color: #f0f4f8;
+    --text-color: #333;
+    --primary-color: #6c63ff;
+    --secondary-color: #ff6584;
+    --accent-color: #00bfa5;
+    --border-color: #e0e0e0;
+    --hover-bg-color: #e0e0e0;
+    --hover-text-color: #6c63ff;
+    --button-bg-color: #6c63ff;
+    --button-hover-bg-color: #4e4cb2;
+    --button-text-color: #fff;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .feature-card {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .feature-card:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .feature-card:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  .feature-card:nth-child(3) {
+    animation-delay: 1s;
+  }
+  
+  .feature-stats > div {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .feature-stats > div:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .feature-stats > div:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  .feature-stats > div:nth-child(3) {
+    animation-delay: 1s;
+  }
+  

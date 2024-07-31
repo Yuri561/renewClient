@@ -1,0 +1,24 @@
+.testimonials-container {
+    perspective: 1000px; /* Add perspective for 3D effect */
+  }
+  
+  .testimonial {
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg); /* Start with no rotation */
+    padding: 20px;
+  }
+  
+  .testimonials-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .testimonials-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+  }
+  
+  .testimonials-container:hover .testimonial {
+    transform: rotateY(15deg); /* Add a slight 3D rotation on hover */
+  }
+  
