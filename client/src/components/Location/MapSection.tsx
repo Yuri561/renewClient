@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, AttributionControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import anime from 'animejs/lib/anime.es.js';
@@ -50,7 +50,7 @@ const MapSection: React.FC = () => {
     targets: '.ml5 .line',
     duration: 600,
     easing: "easeOutExpo",
-    translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+    translateY: ( i) => (-0.625 + 0.625*2*i) + "em"
   }).add({
     targets: '.ml5 .ampersand',
     opacity: [0,1],
@@ -83,7 +83,7 @@ const MapSection: React.FC = () => {
 
   return (
     <div className="max-w-8xl p-5 bg-slate-900 max-md:max-w-xl mx-auto font-[sans-serif] my-4">
-     
+
       <div className="text-center ml5 max-w-2xl mx-auto">
         <span className="text-wrapper">
           <span className="line line1"></span>
@@ -95,11 +95,11 @@ const MapSection: React.FC = () => {
       </div>
       <div className="mt-16 grid md:grid-cols-2 items-center gap-16">
         <div style={{ height: '400px', width: '100%' }} className="rounded-md shadow-[0_14px_40px_-11px_rgba(93,96,127,0.2)] z-10">
-          <MapContainer center={[51.505, -0.09]} zoom={13} style={{ height: '100%', width: '100%' }}>
+          <MapContainer style={{ height: '100%', width: '100%' }}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
+            <AttributionControl position="bottomright" prefix='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>' />
             <Marker position={[51.505, -0.09]}>
               <Popup>
                 Our Location

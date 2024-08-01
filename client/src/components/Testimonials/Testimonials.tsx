@@ -79,7 +79,7 @@ const Testimonials: React.FC = () => {
           className="splide max-w-full"
         >
           {testimonials.map((testimonial, index) => (
-            <SplideSlide key={index}>
+            <SplideSlide>
               <div className={`testimonial-card ${index ? 'highlight' : ''}`}>
                 <div className="testimonial-content">
                   <h4 className="testimonial-name">{testimonial.name}</h4>

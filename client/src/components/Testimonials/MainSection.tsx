@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import anime from 'animejs/lib/anime.es.js';
 import Testimonials from './Testimonials';
 
 const MainSection = () => {
   useEffect(() => {
-    var textWrapper = document.querySelector('.ml14 .letters');
-    if (textWrapper) {
+    const textWrapper = document.querySelector('.ml14 .letters');
+
+    if (textWrapper && textWrapper.textContent) {
       textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
     }
 
@@ -25,7 +26,7 @@ const MainSection = () => {
         easing: "easeOutExpo",
         duration: 800,
         offset: '-=600',
-        delay: (el, i) => 150 + 25 * i
+        delay: (i:number) => 150 + 25 * i
       }).add({
         targets: '.ml14',
         opacity: 0,
