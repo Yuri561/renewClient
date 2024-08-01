@@ -26,7 +26,7 @@ const MainSection = () => {
         easing: "easeOutExpo",
         duration: 800,
         offset: '-=600',
-        delay: (i: number) => 150 + 25 * i
+        delay: 1000
       }).add({
         targets: '.ml14',
         opacity: 0,
