@@ -7,8 +7,10 @@ body {
 		rgb(255, 163, 77) 24.4%,
 		rgb(19, 30, 37) 24.5%,
 		rgb(19, 30, 37) 66%
-	);
+		);
+		
 	margin: 0;
 	padding-top: 60px;
 	font-family: Arial, sans-serif;
+	overflow-x: hidden;
 }

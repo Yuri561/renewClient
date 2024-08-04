@@ -1,56 +1,114 @@
 :root {
-    --background-color: #f0f4f8;
-    --text-color: #333;
-    --primary-color: #6c63ff;
-    --secondary-color: #ff6584;
-    --accent-color: #00bfa5;
-    --border-color: #e0e0e0;
-    --hover-bg-color: #e0e0e0;
-    --hover-text-color: #6c63ff;
-    --button-bg-color: #6c63ff;
-    --button-hover-bg-color: #4e4cb2;
-    --button-text-color: #fff;
+	--background-color: #f0f4f8;
+	--text-color: #333;
+	--primary-color: #6c63ff;
+	--secondary-color: #ff6584;
+	--accent-color: #00bfa5;
+	--border-color: #e0e0e0;
+	--hover-bg-color: #e0e0e0;
+	--hover-text-color: #6c63ff;
+	--button-bg-color: #6c63ff;
+	--button-hover-bg-color: #4e4cb2;
+	--button-text-color: #fff;
+}
+.splide__slide img {
+  border-radius: 15px; /* Adds rounded borders */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds subtle shadows */
+}
+
+/* Adjust the carousel's position if necessary */
+.splide {
+  position: relative; /* Ensures it's positioned relative to its container */
+  overflow: hidden; /* Prevents any element within it from causing scroll */
+}
+
+@-webkit-keyframes float {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.feature-card {
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	-webkit-animation: float 3s ease-in-out infinite;
+	animation: float 3s ease-in-out infinite;
+}
+
+.feature-card:nth-child(1) {
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}
+.feature-card:nth-child(2) {
+	-webkit-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+.feature-card:nth-child(3) {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.feature-stats > div {
+	-webkit-animation: float 3s ease-in-out infinite;
+	animation: float 3s ease-in-out infinite;
+}
+
+.feature-stats > div:nth-child(1) {
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}
+.feature-stats > div:nth-child(2) {
+	-webkit-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+.feature-stats > div:nth-child(3) {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.hero-section {
+  /* Ensure the hero section does not extend beyond the viewport */
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 1rem;
   }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+
+  .grid {
+    grid-template-columns: 1fr; /* Stack columns on small screens */
   }
-  
-  .feature-card {
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .feature-card:nth-child(1) {
-    animation-delay: 0s;
-  }
-  .feature-card:nth-child(2) {
-    animation-delay: 0.5s;
-  }
-  .feature-card:nth-child(3) {
-    animation-delay: 1s;
-  }
-  
-  .feature-stats > div {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .feature-stats > div:nth-child(1) {
-    animation-delay: 0s;
-  }
-  .feature-stats > div:nth-child(2) {
-    animation-delay: 0.5s;
-  }
-  .feature-stats > div:nth-child(3) {
-    animation-delay: 1s;
-  }
-  
+}
+
+/* Ensure that all images and other content do not exceed the width of their containers */
+img, .box, .feature-card, .feature-stats > div {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Responsive animations and transitions */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

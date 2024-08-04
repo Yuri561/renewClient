@@ -1,7 +1,7 @@
 import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import './styles.css';
+import './TestimonialsStyles.css';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 const testimonials = [
