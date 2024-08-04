@@ -3,14 +3,18 @@ body {
 		circle at -8.9% 51.2%,
 		rgb(255, 124, 0) 0%,
 		rgb(255, 124, 0) 15.9%,
-		rgb(255, 163, 77) 15.9%,
-		rgb(255, 163, 77) 24.4%,
-		rgb(19, 30, 37) 24.5%,
+		rgb(241, 182, 19) 15.9%,
+		rgb(0, 31, 116) 24.4%,
+		rgb(0, 79, 128) 24.5%,
 		rgb(19, 30, 37) 66%
 		);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
 		
 	margin: 0;
 	padding-top: 60px;
-	font-family: Arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	overflow-x: hidden;
 }
+

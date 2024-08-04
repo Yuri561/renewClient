@@ -1,0 +1,48 @@
+/* Base styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #151d20;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header img {
+  width: 80px; /* Logo width */
+  height: auto;
+}
+
+.header nav {
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .header img {
+    margin-bottom: 10px; /* Space between logo and nav on small screens */
+  }
+
+  .header nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header nav a {
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+  }
+}
+
+/* Add more specific styles as needed */

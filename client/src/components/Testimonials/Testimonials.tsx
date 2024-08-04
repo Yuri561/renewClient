@@ -3,6 +3,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import './TestimonialsStyles.css';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import './TestimonialsStyles.css';
 
 const testimonials = [
   {
@@ -51,7 +52,7 @@ const Testimonials: React.FC = () => {
             type: 'loop',
             direction: 'ttb',
             height: '600px',
-            perPage: 3,
+            perPage: 4,
             perMove: 1,
             focus: 'center',
             wheel: true,
@@ -71,6 +72,12 @@ const Testimonials: React.FC = () => {
                 padding: {
                   top: '1rem',
                   bottom: '1rem'
+                }
+              },
+              360: {
+                padding: {
+                  top: '0.5rem',
+                  bottom: '0.5rem'
                 }
               }
             }

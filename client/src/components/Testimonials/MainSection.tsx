@@ -4,19 +4,7 @@ import Testimonials from './Testimonials';
 
 const MainSection = () => {
   // Variants for text animation
-  const letterVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-        type: 'spring',
-        stiffness: 200,
-      },
-    }),
-  };
+
 
   // Variants for container animation
   const containerVariants = {
@@ -38,24 +26,15 @@ const MainSection = () => {
           <Testimonials />
           <div className="max-md:-order-1">
             <motion.div
-              className="text-white text-4xl font-extrabold"
+              className="text-white sm:text-[25px]  font-extrabold"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
             >
-              {"Discover Your Inner Strength".split("").map((letter, index) => (
-                <motion.span
-                  key={index}
-                  className="text-slate-50 text-4xl font-extrabold"
-                  custom={index}
-                  variants={letterVariants}
-                >
-                  {letter}
-                </motion.span>
-              ))}
+            Discover Your Inner Strength
             </motion.div>
             <motion.h2
-              className="text-white text-4xl font-extrabold mt-4"
+              className="text-white   sm: text-sm font-extrabold mt-4"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
