@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { TileLayer, Marker, Popup, AttributionControl } from 'react-leaflet';
-import { MapContainer } from 'react-leaflet';
+import { MapContainer } from 'react-leaflet/MapContainer';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import anime from 'animejs/lib/anime.es.js';
