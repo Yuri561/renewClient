@@ -1,10 +1,10 @@
-import React from 'react';
+
 import { NavLink } from 'react-router-dom';
 import { X } from 'lucide-react';
 import Logo from '../../../public/LOGO.png';
 
 
-const NavMenu: React.FC<{ isMenuOpen: boolean, toggleMenu: () => void }> = ({ isMenuOpen, toggleMenu }) => {
+const NavMenu: React.FC<{ isMenuOpen: boolean; toggleMenu: () => void }> = ({ isMenuOpen, toggleMenu }: { isMenuOpen: boolean; toggleMenu: () => void }) => {
   const navLinkArr = [
 	{
 		name: 'Home',

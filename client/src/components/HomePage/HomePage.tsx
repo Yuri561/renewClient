@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import HeroSection from '../Hero/HeroSection';
 
@@ -9,11 +9,11 @@ import LocationSection from '../Location/LocationSection';
 const HomePage: React.FC = () => { 
     return (
         <div>
-            
+
             <HeroSection />
             <MainSection />
             <LocationSection />
-           
+
         </div>
     );
 };

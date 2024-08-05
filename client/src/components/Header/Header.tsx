@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Logo from '../../../public/LOGO.png';
 import TopNav from './TopNav';
 import NavLinks from './NavLinks';

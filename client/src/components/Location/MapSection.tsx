@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { TileLayer, Marker, Popup, AttributionControl } from 'react-leaflet';
-import { MapContainer } from 'react-leaflet/MapContainer';
+import  { useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, AttributionControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import anime from 'animejs/lib/anime.es.js';
@@ -58,7 +57,10 @@ const MapSection: React.FC = () => {
       </div>
       <div className="mt-16 grid md:grid-cols-2 items-center gap-16">
         <div style={{ height: '400px', width: '100%' }} className="rounded-md shadow-[0_14px_40px_-11px_rgba(93,96,127,0.2)] z-10">
-          <MapContainer center={[35.0527, -78.8784]} zoom={13} style={{ height: '100%', width: '100%' }}>
+          <MapContainer
+            center={[35.0527, -78.8784]}
+            zoom={13}
+            style={{ height: '100%', width: '100%' }}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />

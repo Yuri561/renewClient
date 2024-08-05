@@ -1,4 +1,4 @@
-import React, {useRef } from 'react';
+import  {useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -11,7 +11,7 @@ interface TestimonialProps {
   highlight?: boolean;
 }
 
-const Testimonial: React.FC<TestimonialProps> = ({ name, text, image, highlight }) => {
+const Testimonial: React.FC<TestimonialProps> = ({ name, text, image, highlight }: TestimonialProps) => {
   const testimonialRef = useRef<HTMLDivElement>(null);
 
   // useEffect(() => {
