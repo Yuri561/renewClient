@@ -1,5 +1,5 @@
 import  { useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, AttributionControl } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, AttributionControl, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import anime from 'animejs/lib/anime.es.js';
@@ -45,6 +45,7 @@ const MapSection: React.FC = () => {
     });
   }, []);
 
+
   return (
     <div className="max-w-8xl p-5 bg-slate-900 max-md:max-w-xl mx-auto font-[sans-serif] my-4">
       <div className="text-center ml5 max-w-2xl mx-auto">
@@ -57,6 +58,11 @@ const MapSection: React.FC = () => {
       </div>
       <div className="mt-16 grid md:grid-cols-2 items-center gap-16">
         <div style={{ height: '400px', width: '100%' }} className="rounded-md shadow-[0_14px_40px_-11px_rgba(93,96,127,0.2)] z-10">
+          {const map = useMap()
+          if (map){
+            map.getCenter()
+          }
+          }
           <MapContainer
             center={[35.0527, -78.8784]}
             zoom={13}
