@@ -1,4 +1,4 @@
-import React from 'react';
+
 import MapSection from './MapSection';
 import OnlineZoomSection from './OnlineZoomSection';
 

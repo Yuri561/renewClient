@@ -1,12 +1,12 @@
-import React from 'react';
+
 import './styles.css';
 
 interface StatsProps {
   // eslint-disable-next-line @typescript-eslint/ban-types
-  className?: String,
+  className?: string,
 }
 
-const Statistics: React.FC<StatsProps> = ({className}) => {
+const Statistics: React.FC<StatsProps> = ({className}: StatsProps) => {
   return (
     <div className="mt-[8rem] ">
       <div className={`grid sm:grid-cols-1 mt-[25px] md:grid-cols-2 md:mt-[30px] gap-4 items-center feature-stats  ${className}`}>

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import FeatureCard from './FeatureCard';
 import { Brain, Headset, Rocket } from 'lucide-react';
 import './styles.css';
