@@ -98,7 +98,7 @@ const ServicesSection: React.FC = () => {
       translateY: [-50, 0],
       opacity: [0, 1],
       duration: 800,
-      delay: (el, i) => i * 200,
+      delay: 200,
       easing: 'easeOutExpo'
     });
   }, []);
