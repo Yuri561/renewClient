@@ -20,7 +20,7 @@ const HeroImageCarousel: React.FC = () => {
     <div className="carousel-container  mx-auto max-w-8xl overflow-hidden">
       <Swiper
         spaceBetween={30}
-        slidesPerView={1}
+        slidesPerView={3}
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
         centeredSlides={true}
@@ -37,7 +37,7 @@ const HeroImageCarousel: React.FC = () => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className="swiper-slide-bg p-5" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '60vh' }}></div>
+            <div className="swiper-slide-bg p-7" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '80vh' }}></div>
             <div className="text-white p-6 absolute bottom-0 w-full bg-gradient-to-b from-transparent to-black">
               <h2 className="text-2xl font-bold">{["Personalized Care", "Personalized Support", "Expert Therapists", "Flexible Scheduling"][index]}</h2>
               <p>{["Experience tailored mental health care designed to suit your individual needs, all from the comfort of your home.", "Connect with over 100 trusted therapists who use proven strategies to help you achieve mental wellness.", "Book sessions at times that work for you, with easy rescheduling options to ensure you never miss out on care."][index]}</p>
