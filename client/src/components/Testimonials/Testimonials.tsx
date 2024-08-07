@@ -53,7 +53,7 @@ const Testimonials: React.FC = () => {
             type: 'loop',
             direction: 'ttb',
             height: '100%',
-            perPage: 3,
+            perPage: 2,
             perMove: 1,
             focus: 'center',
             wheel: true,
@@ -97,7 +97,7 @@ const Testimonials: React.FC = () => {
                   <h4 className="testimonial-name">{testimonial.name}</h4>
                   <p className="testimonial-text">{testimonial.text}</p>
                 </div>
-                <img src={testimonial.image} className={`testimonial-image sm:hidden`} alt={testimonial.name} />
+                <img src={testimonial.image} className={`testimonial-image `} alt={testimonial.name} />
               </div>
             </SplideSlide>
           ))}

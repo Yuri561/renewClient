@@ -30,6 +30,7 @@
 .splide__slide.is-active {
   opacity: 1;
   transform: scale(1);
+  padding: 3rem;
 }
 
 .testimonial-card {
