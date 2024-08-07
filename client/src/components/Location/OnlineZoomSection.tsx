@@ -1,9 +1,7 @@
-
 import { motion } from 'framer-motion';
 import './LocationStyles.css';
 
 const OnlineZoomSection: React.FC = () => {
-  // Variants for the text and button animations
   const textVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } }
@@ -12,6 +10,12 @@ const OnlineZoomSection: React.FC = () => {
   const buttonVariant = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5, delay: 0.5 } }
+  };
+
+  // Function to handle button click
+  const handleScheduleClick = () => {
+    // Open Calendly link in a new tab
+    window.open('https://calendly.com/cloudflow34/mental-awareness', '_blank');
   };
 
   return (
@@ -50,6 +54,7 @@ const OnlineZoomSection: React.FC = () => {
             className="px-6 py-2 mt-8 rounded text-white text-sm tracking-wider font-medium outline-none border-2 border-blue-600 bg-blue-600 hover:bg-transparent hover:text-black transition-all duration-300"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            onClick={handleScheduleClick} // Handle button click
           >
             Schedule a Session
           </motion.button>

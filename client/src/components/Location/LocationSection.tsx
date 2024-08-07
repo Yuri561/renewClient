@@ -6,7 +6,7 @@ import OnlineZoomSection from './OnlineZoomSection';
 
 const LocationSection: React.FC = () => {
   return (
-    <div>
+    <div id='services-section'>
       <MapSection />
       <OnlineZoomSection />
     </div>

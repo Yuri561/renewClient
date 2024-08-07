@@ -18,7 +18,7 @@ const HeroContent: React.FC = () => {
         <li>Resource libraries filled with educational materials to help you understand and manage your mental health.</li>
       </ul>
       <button type='button' className="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5 transition-colors duration-300">
-        Explore Our Services
+        <a href='#services-section'>Explore Our Services</a>
       </button>
 
       </div>
