@@ -3,7 +3,7 @@ import MyStory from './MyStory';
 const AboutSection: React.FC = () => {
     return (
         <div className="bg-gradient-to-b from-blue-900 via-blue-800 to-blue-500 px-6 sm:py-20 py-10 font-sans text-white">
-            <div className="max-w-screen-xl mx-auto text-center">
+            <div className="max-w-8-xl mx-auto text-center">
                 <h1 className="text-5xl sm:text-3xl font-extrabold leading-tight mb-6">
                     Welcome to Our Premier Mental Health Services
                 </h1>

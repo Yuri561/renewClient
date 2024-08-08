@@ -9,7 +9,7 @@ import professionalImage from '../../../public/professional.jpeg';
 const MyStory: React.FC = () => {
     return (
         <div className="bg-white text-gray-700 px-6 py-10">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-8xl mx-auto">
                 <h2 className="text-3xl font-bold text-center mb-8">Meet LaToya - A Journey in Mental Health Care</h2>
                 <div className="grid md:grid-cols-2 gap-10">
                     <div>
