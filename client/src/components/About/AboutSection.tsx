@@ -1,12 +1,12 @@
 import React from 'react';
 import MyStory from './MyStory';
 import { motion } from 'framer-motion';
+import Marquee from "react-fast-marquee";
 
 const AboutSection: React.FC = () => {
   return (
-    <div className="mt-8 mb-6  bg-gradient-to-b from-blue-900 via-blue-800 to-blue-500 px-6 sm:py-20 py-10 font-sans text-slate-600">
+    <div className="mt-12 mb-6 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-500 px-6 sm:py-20 py-10 font-sans text-slate-600">
       <div className="bg-white mt-24 rounded text-light p-2 mt-6 lg:mt-12 max-w-8xl mx-auto text-center">
-
         <motion.h1
           className="text-5xl sm:text-4xl font-extrabold leading-tight mb-6"
           initial={{ opacity: 0, y: -20 }}
@@ -45,9 +45,11 @@ const AboutSection: React.FC = () => {
           <h2 className="text-2xl font-bold text-center mb-4">
             Inspiring Mental Health and Wellness
           </h2>
-          <marquee className="text-base italic" behavior="scroll" direction="left" scrollamount="3">
-            "The greatest wealth is mental health. We are here to support, inspire, and guide you on your journey." 
-          </marquee>
+          <Marquee>
+            <p className="text-base italic">
+              "The greatest wealth is mental health. We are here to support, inspire, and guide you on your journey."
+            </p>
+          </Marquee>
         </motion.div>
       </div>
       <MyStory />
