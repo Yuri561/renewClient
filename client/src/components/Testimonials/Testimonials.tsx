@@ -9,7 +9,7 @@ const grid = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]];
 const size = 60;
 const gap = 10;
 
-const Square = ({ active, setActive, colIndex, rowIndex, x, y }: { active: { row: number, col: number }, setActive: React.Dispatch<React.SetStateAction<{ row: number, col: number }>>, colIndex: number, rowIndex: number, x: number, y: number }) => {
+const Square = ({ active, setActive, colIndex, rowIndex, x, y }: { active: { row: number, col: number }, setActive: React.Dispatch<React.SetStateAction<{ row: number, col: number }>>, colIndex: number, rowIndex: number, x: any, y: any }) => {
   const isDragging = colIndex === active.col && rowIndex === active.row;
   const diagonalIndex = (360 / 6) * (colIndex + rowIndex);
   const d = distance(
@@ -101,7 +101,7 @@ const Testimonials: React.FC = () => {
                 rowIndex={rowIndex}
                 colIndex={colIndex}
                 key={rowIndex + colIndex}
-                size={size}
+               
 
               />
             ))
