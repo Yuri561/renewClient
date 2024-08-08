@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
+import { motion } from 'framer-motion';
+import { InView } from 'react-intersection-observer';
 import anime from 'animejs/lib/anime.es.js';
 import { 
   UserCheck, 
@@ -15,7 +17,6 @@ import {
   BookOpen 
 } from 'lucide-react';
 import './LocationStyles.css';
-
 const services = [
   {
     title: "In-Person Consultations",
@@ -79,20 +80,14 @@ const services = [
   },
 ];
 
-const renderServices = (services: { title: string; description: string; icon: JSX.Element }[]) => {
-  return services.map((service, index) => (
-    <div key={index} className="service-card p-6 bg-white rounded-lg shadow-lg flex items-start mb-6 transition-transform transform hover:scale-105 hover:shadow-2xl">
-      <div className="flex-shrink-0 mr-4">{service.icon}</div>
-      <div>
-        <h4 className="text-lg font-bold text-blue-600">{service.title}</h4>
-        <p className="text-gray-700">{service.description}</p>
-      </div>
-    </div>
-  ));
+
+const serviceVariants = {
+  hidden: { opacity: 0, translateY: 50 },
+  visible: { opacity: 1, translateY: 0, transition: { duration: 0.5, ease: "easeOut" } }
 };
 
 const ServicesSection: React.FC = () => {
-  useEffect(() => {
+    useEffect(() => {
     anime({
       targets: '.service-card',
       translateY: [-50, 0],
@@ -102,15 +97,36 @@ const ServicesSection: React.FC = () => {
       easing: 'easeOutExpo'
     });
   }, []);
+  const renderServices = (services: { title: string; description: string; icon: JSX.Element }[]) => {
+    return services.map((service, index) => (
+      <InView key={index} triggerOnce={true} threshold={0.5}>
+        {({ inView, ref }) => (
+          <motion.div
+            ref={ref}
+            variants={serviceVariants}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            className="service-card p-6 bg-white rounded-lg shadow-lg flex items-start mb-6 transition-transform transform hover:scale-105 hover:shadow-2xl"
+          >
+            <div className="flex-shrink-0 mr-4">{service.icon}</div>
+            <div>
+              <h4 className="text-lg font-bold text-blue-600">{service.title}</h4>
+              <p className="text-gray-700">{service.description}</p>
+            </div>
+          </motion.div>
+        )}
+      </InView>
+    ));
+  };
 
   return (
     <div className="max-w-8xl p-5 bg-gradient-to-r from-indigo-600 to-blue-500 max-md:max-w-xl mx-auto font-[sans-serif] my-4">
       <div className="text-center ml5 max-w-2xl mx-auto">
         <h2 className="text-white text-3xl font-extrabold text-center mb-6">
-        Comprehensive Mental Health Services
+          Comprehensive Mental Health Services
         </h2>
         <p className="text-white text-sm">
-        Our team of experienced professionals is committed to creating a safe, welcoming, and confidential environment 
+          Our team of experienced professionals is committed to creating a safe, welcoming, and confidential environment 
           where you can explore your thoughts and feelings. We offer both individual and group sessions, tailored to meet 
           your unique needs. From in-person consultations to online therapy sessions, our flexible options ensure that 
           you can access the support you need, when and where it suits you.

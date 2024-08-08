@@ -1,110 +1,122 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import * as React from "react";
+import { useState } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { distance } from "@popmotion/popcorn";
+import "./TestimonialsStyles.css";
 
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
-import './TestimonialsStyles.css';
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-import './TestimonialsStyles.css';
+const grid = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]];
+const size = 60;
+const gap = 10;
 
-const testimonials = [
-  {
-    name: 'James R.',
-    text: 'Remote counseling has been a lifesaver for me. The ability to connect with my therapist from the comfort of my home has made it easier to manage my anxiety and stay committed to my sessions. The guidance and support I’ve received have been invaluable.',
-    image: 'https://readymadeui.com/profile_2.webp'
-  },
-  {
-    name: 'Michael T.',
-    text: 'I was initially hesitant about online therapy, but it has exceeded my expectations. My therapist is incredibly supportive and understanding. The convenience of scheduling sessions that fit into my busy life has made a significant difference in my mental well-being.',
-    image: 'https://readymadeui.com/profile_3.webp'
-  },
-  {
-    name: 'Sophia L.',
-    text: 'The online platform is user-friendly, and I appreciate the privacy it offers. My counselor has helped me navigate through depression and develop coping strategies that have improved my daily life. I feel more empowered and hopeful about the future.',
-    image: 'https://readymadeui.com/profile_5.webp'
-  },
-  {
-    name: 'David B.',
-    text: 'I love the flexibility that online counseling provides. It’s easy to join a session from anywhere, and my therapist is always attentive and encouraging. I’ve gained new insights into my challenges and feel more equipped to handle them.',
-    image: 'https://readymadeui.com/profile_6.webp'
-  },
-  {
-    name: 'Rachel K.',
-    text: 'Switching to remote counseling has been a positive change for me. The sessions are just as effective as in-person meetings, and the convenience cannot be overstated. My mental health has improved significantly since I started.',
-    image: 'https://readymadeui.com/profile_5.webp'
-  },
-  {
-    name: 'Daniel S.',
-    text: 'The support I receive from my online counselor is amazing. They truly understand my struggles with stress and have helped me develop practical strategies to manage it. I appreciate how accessible and responsive they are.',
-    image: 'https://readymadeui.com/profile_3.webp'
-  },
-  {
-    name: 'Olivia M.',
-    text: 'Remote counseling has allowed me to prioritize my mental health without the stress of commuting. The sessions are convenient and personalized, and I feel heard and supported every step of the way. I highly recommend this service to anyone seeking help.',
-    image: 'https://readymadeui.com/profile_4.webp'
-  }
-];
-
-
-const Testimonials: React.FC = () => {
+const Square = ({ active, setActive, colIndex, rowIndex, x, y }: { active: { row: number, col: number }, setActive: React.Dispatch<React.SetStateAction<{ row: number, col: number }>>, colIndex: number, rowIndex: number, x: number, y: number }) => {
+  const isDragging = colIndex === active.col && rowIndex === active.row;
+  const diagonalIndex = (360 / 6) * (colIndex + rowIndex);
+  const d = distance(
+    { x: active.col, y: active.row },
+    { x: colIndex, y: rowIndex }
+  );
+  const springConfig = {
+    stiffness: Math.max(700 - d * 120, 0),
+    damping: 20 + d * 5
+  };
+  const dx = useSpring(x, springConfig);
+  const dy = useSpring(y, springConfig);
+   const letter = String.fromCharCode(65 + colIndex + rowIndex * grid[0].length);
   return (
-    <div className="testimonials-section">
-      <div className="testimonials-container">
-        <Splide
-          options={{
-            type: 'loop',
-            direction: 'ttb',
-            height: '100%',
-            perPage: 2,
-            perMove: 1,
-            focus: 'center',
-            wheel: true,
-            waitForTransition: true,
-            pagination: true,
-            arrows: false,
-            gap: '1rem',
-            autoScroll: {
-              speed: 1,
-            },
-            padding: {
-              top: '2rem',
-              bottom: '2rem'
-            },
-            breakpoints: {
-              768: {
-                perPage: 1,
-                padding: {
-                  top: '1rem',
-                  bottom: '1rem'
-                }
-              },
-              360: {
-                perPage: 1,
+    <motion.div
+      drag
+      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+      dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
+      dragElastic={1}
+      onDragStart={() => setActive({ row: rowIndex, col: colIndex })}
+      style={{
+        background: `hsla(calc(var(--base-hue) + ${diagonalIndex}), 80%, 60%, 1)`,
+        width: size,
+        height: size,
 
-                padding: {
-                  top: '0.25rem',
-                  bottom: '0.25rem'
-                },
-                width: '100%',
-              }
-            }
-          }}
-          extensions={{ AutoScroll }}
-          className="splide max-w-full"
-        >
-          {testimonials.map((testimonial, index) => (
-            <SplideSlide>
-              <div className={`testimonial-card ${index ? 'highlight' : ''}`}>
-                <div className="testimonial-content">
-                  <h4 className="testimonial-name">{testimonial.name}</h4>
-                  <p className="testimonial-text">{testimonial.text}</p>
-                </div>
-                <img src={testimonial.image} className={`testimonial-image `} alt={testimonial.name} />
-              </div>
-            </SplideSlide>
-          ))}
-        </Splide>
-      </div>
-    </div>
+        top: rowIndex * (size + gap),
+        left: colIndex * (size + gap),
+        transition: "background 0.3s ease",
+        cursor: isDragging ? "grabbing" : "pointer",
+        color: 'white',
+        fontSize: '20px',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        bottom: '-150px',
+        position: "absolute",
+        borderRadius: "50%",
+        x: isDragging ? x : dx,
+        y: isDragging ? y : dy,
+        zIndex: isDragging ? 1 : 0
+      }}
+      
+    >
+      {letter}
+    </motion.div>
+      
+    
+    
   );
 };
 
+const Testimonials: React.FC = () => {
+  const [active, setActive] = useState({ row: 0, col: 0 });
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  return (
+    <div className="app">
+      <motion.div
+        animate={{ "--base-hue": 360 } as any}
+        initial={{ "--base-hue": 0 } as any}
+        transition={{ duration: 10, loop: Infinity, ease: "linear" }}
+        style={{ width: "100%", height: "100%", padding: "5rem", position: "relative", right: "50px"}}
+      >
+        <motion.div
+          style={{
+            display: "flex",
+            width: '100%',
+            height: (size + gap) * 4 - gap,
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            position: "relative",
+            perspective: 500,
+            bottom: '-150px',
+            justifyContent: "center",
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            margin: 'auto',
+          }}
+        >
+          {grid.map((row, rowIndex) =>
+            row.map((_item, colIndex) => (
+              <Square
+                x={x}
+                y={y}
+                active={active}
+                setActive={setActive}
+                rowIndex={rowIndex}
+                colIndex={colIndex}
+                key={rowIndex + colIndex}
+                size={size}
+
+              />
+            ))
+          )}
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+}
+
 export default Testimonials;
+
+
+
+
+
+
+

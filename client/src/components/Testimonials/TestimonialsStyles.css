@@ -101,6 +101,27 @@ img{
   color: #EEEEEE;
 }
 
+
+
+.app {
+  font-family: sans-serif;
+  text-align: center;
+  width: 100vw;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .testimonials-section {
@@ -126,3 +147,4 @@ img{
 }
 
 }
+
