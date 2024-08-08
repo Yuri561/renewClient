@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
             </svg>
           </a>
         </div>
-        <p className="text-gray-300 text-sm">© 2023 Renewing The Mind PLLC. All rights reserved.</p>
+        <p className="text-gray-300 text-sm">© 2023 Renewing Of The Mind PLLC. All rights reserved.</p>
       </div>
     </footer>
   );

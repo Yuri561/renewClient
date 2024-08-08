@@ -7,7 +7,7 @@ const TopNav: React.FC = () => {
     <section className="bg-[#004d66] min-h-[40px] px-4 py-2 sm:px-10 flex items-center max-sm:flex-col">
       <button type="button" className="text-white text-sm">
         <Phone className="mr-3 inline-block w-[16px] h-[16px]" />
-        +180-548-2588
+        +1 919-446-4999
       </button>
       <span className="border-l h-3 mx-6 max-sm:hidden"></span>
       <button type="button" className="text-white text-sm max-sm:my-2">

@@ -55,9 +55,6 @@ const Square = ({ active, setActive, colIndex, rowIndex, x, y }: { active: { row
     >
       {letter}
     </motion.div>
-      
-    
-    
   );
 };
 

@@ -25,7 +25,7 @@ const NavMenu: React.FC<{ isMenuOpen: boolean; toggleMenu: () => void }> = ({ is
 	},
 	{
 		name: 'About',
-		to: '/about',
+		to: '/about-section',
 	},
 	{
 		name: 'Provider',

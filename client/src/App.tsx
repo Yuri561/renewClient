@@ -5,6 +5,7 @@ import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import Layout from './components/Layout/Layout';
 import './App.css'
+import AboutSection from './components/About/AboutSection';
 
 
 const App: React.FC = () => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/about-section" element={<AboutSection />} />
           {/* Add other routes here */}
         </Route>
       </Routes>
