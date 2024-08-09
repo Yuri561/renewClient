@@ -10,7 +10,7 @@ import professionalImage from '../../../public/professional.jpeg';
 const MyStory: React.FC = () => {
   return (
     <div className="bg-white text-gray-700 px-8 py-16 mt-6 rounded">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         <motion.h2
           className="text-5xl font-extrabold text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
@@ -114,6 +114,21 @@ const MyStory: React.FC = () => {
               Her certification journey emphasized the importance of lifelong learning and adaptation to the evolving landscape of mental health care.
               LaToya actively engages in continuing education to stay abreast of the latest research, ensuring that her practice reflects current standards and innovations in the field.
             </p>
+          <p className="text-lg leading-relaxed  mx-auto mb-4">
+            LaToya’s journey is a testament to her dedication to improving mental health care and her unwavering commitment to her patients.
+            Her approach combines clinical expertise with compassion, aiming to empower individuals and families on their path to mental wellness.
+            Join her on this transformative journey and discover the difference that personalized, patient-centered care can make.
+          </p>
+          <p className="text-lg leading-relaxed  mx-auto mb-4">
+            Through her leadership and vision, LaToya has inspired countless others to pursue careers in mental health.
+            Her impact extends beyond her immediate practice, influencing mental health policies and advocating for increased access to quality mental health care.
+            With a focus on holistic well-being, she continues to innovate and lead in the mental health field.
+          </p>
+          <p className="text-lg leading-relaxed  mx-auto">
+            LaToya believes in the power of community and collaboration, often engaging with local organizations to promote mental health awareness and education.
+            Her efforts are directed towards building resilient communities where mental health is openly discussed and prioritized.
+            Through workshops, seminars, and public speaking engagements, she strives to dismantle the stigma surrounding mental health, encouraging open dialogue and acceptance.
+          </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -123,7 +138,7 @@ const MyStory: React.FC = () => {
             <img
               src={professionalImage}
               alt="LaToya as a certified professional"
-              className="w-[800px] h-80 object-cover rounded-xl shadow-xl"
+              className="w-[30rem] h-70 object-fill rounded-xl shadow-xl mx-auto"
             />
           </motion.div>
         </div>
@@ -133,21 +148,6 @@ const MyStory: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
         >
-          <p className="text-lg leading-relaxed max-w-3xl mx-auto mb-4">
-            LaToya’s journey is a testament to her dedication to improving mental health care and her unwavering commitment to her patients.
-            Her approach combines clinical expertise with compassion, aiming to empower individuals and families on their path to mental wellness.
-            Join her on this transformative journey and discover the difference that personalized, patient-centered care can make.
-          </p>
-          <p className="text-lg leading-relaxed max-w-3xl mx-auto mb-4">
-            Through her leadership and vision, LaToya has inspired countless others to pursue careers in mental health.
-            Her impact extends beyond her immediate practice, influencing mental health policies and advocating for increased access to quality mental health care.
-            With a focus on holistic well-being, she continues to innovate and lead in the mental health field.
-          </p>
-          <p className="text-lg leading-relaxed max-w-3xl mx-auto">
-            LaToya believes in the power of community and collaboration, often engaging with local organizations to promote mental health awareness and education.
-            Her efforts are directed towards building resilient communities where mental health is openly discussed and prioritized.
-            Through workshops, seminars, and public speaking engagements, she strives to dismantle the stigma surrounding mental health, encouraging open dialogue and acceptance.
-          </p>
         </motion.div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { InView } from 'react-intersection-observer';
-import './LocationStyles.css';
+import ZoomPng from '../../../public/zoom.png';
 
 const OnlineZoomSection: React.FC = () => {
   const controls = useAnimation();
@@ -40,19 +40,16 @@ const OnlineZoomSection: React.FC = () => {
           </p>
         </motion.div>
         <div className="mt-12 grid md:grid-cols-2 items-center gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={controls}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+     
             <img
-              src="https://source.unsplash.com/500x300/?therapy,mental-health"
-              className="object-cover rounded-md shadow-lg"
-              alt="Online Zoom Sessions"
-              width="500"
-              height="300"
+              src={ZoomPng}
+              className="object-cover rounded-md w-full h-80 shadow-lg"
+            alt="Online Zoom Sessions"
+            width={500}
+            height={300}
+    
             />
-          </motion.div>
+     
           <motion.div
             initial="hidden"
             animate={controls}
