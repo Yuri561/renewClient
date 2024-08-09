@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
+import { renderComponentBasedOnIssue } from './RenderHelpers/renderComponentBasedOnIssue'; // Ensure correct path
 
 const ProgramsSection: React.FC = () => {
     const [selectedIssue, setSelectedIssue] = useState('');
     const [ageRange, setAgeRange] = useState('');
     const [acceptingNew, setAcceptingNew] = useState(false);
+    const [showResults, setShowResults] = useState(false);
 
     const mentalHealthIssues = [
         { id: 1, name: "Anxiety" },
         { id: 2, name: "Depression" },
         { id: 3, name: "Bipolar Disorder" },
         { id: 4, name: "PTSD" },
-        { id: 5, name: "Schizophrenia" }
+        { id: 5, name: "Crisis Intervention" },
+        { id: 6, name: "Group Therapy" },
+        { id: 7, name: "Stress" },
+        { id: 8, name: "Family Counseling" },
+        { id: 9, name: "Abuse Treatment" },
+        { id: 10, name: "Schizophrenia" }
     ];
 
     const ageRanges = [
@@ -22,7 +29,7 @@ const ProgramsSection: React.FC = () => {
 
     const handleSearch = () => {
         console.log("Searching for programs related to:", selectedIssue, ", Age range:", ageRange, ", Accepting new patients:", acceptingNew);
-        // Add actual search logic here
+        setShowResults(true);
     };
 
     return (
@@ -78,6 +85,9 @@ const ProgramsSection: React.FC = () => {
                     >
                         Add New Program
                     </button>
+                </div>
+                <div className="mt-6">
+                     {showResults && renderComponentBasedOnIssue(selectedIssue)} 
                 </div>
             </div>
         </div>

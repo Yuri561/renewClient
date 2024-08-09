@@ -12,7 +12,7 @@ const ProgramHeader: React.FC = () => {
     };
 
     return (
-        <div className="p-8 mt-[55px] bg-[#004d66] px-6  py-10 font-[sans-serif]">
+        <div className="p-8 mt-[95px] bg-[#004d66] px-6  py-10 font-[sans-serif]">
             <div className="max-w-screen-xl  mx-auto text-center text-3xl text-white">
                 <motion.h1
                     className="text-5xl sm:text-3xl font-extrabold leading-tight mb-6"
