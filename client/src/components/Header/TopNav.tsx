@@ -12,7 +12,7 @@ const TopNav: React.FC = () => {
       <span className="border-l h-3 mx-6 max-sm:hidden"></span>
       <button type="button" className="text-white text-sm max-sm:my-2">
         <Mail className="mr-3 inline-block w-[16px] h-[16px]" />
-        info@renewingminds.com
+        info@renewingofthemind.co
       </button>
       <div className="sm:ml-auto text-white">
         <Link to="#" className="text-white text-sm mr-1">Sign In</Link>

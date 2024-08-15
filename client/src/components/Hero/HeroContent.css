@@ -1,0 +1,117 @@
+/* Main content and background */
+.hero-section-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.p-9 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating Bubbles */
+.floating-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-animation: float 10s ease-in-out infinite, fadeInOut 6s ease-in-out infinite;
+          animation: float 10s ease-in-out infinite, fadeInOut 6s ease-in-out infinite;
+}
+
+.bubble-1 {
+  width: 150px;
+  height: 150px;
+  top: 20%;
+  left: 10%;
+  background-color: rgba(173, 216, 230, 0.7); /* Light Blue */
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+}
+
+.bubble-2 {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 30%;
+  background-color: rgba(255, 182, 193, 0.7); /* Light Pink */
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+}
+
+.bubble-3 {
+  width: 200px;
+  height: 200px;
+  bottom: 20%;
+  right: 20%;
+  background-color: rgba(240, 128, 128, 0.7); /* Light Coral */
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
+}
+
+.bubble-4 {
+  width: 180px;
+  height: 180px;
+  bottom: 30%;
+  left: 70%;
+  background-color: rgba(135, 206, 250, 0.7); /* Light Sky Blue */
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+.bubble-5 {
+  width: 120px;
+  height: 120px;
+  top: 70%;
+  right: 10%;
+  background-color: rgba(144, 238, 144, 0.7); /* Light Green */
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+}
+
+/* Bubble Animation */
+@-webkit-keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@-webkit-keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}

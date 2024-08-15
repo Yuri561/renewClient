@@ -1,85 +1,85 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { InView } from 'react-intersection-observer';
 import anime from 'animejs/lib/anime.es.js';
 import { 
-  UserCheck, 
-  Video, 
+  ShieldCheck, 
+  Laptop, 
   Users, 
   ClipboardList, 
-  Activity, 
-  Heart, 
-  Shield, 
-  Coffee, 
   Brain, 
-  Calendar, 
-  Phone, 
-  BookOpen 
+  Puzzle,
+  LifeBuoy, 
+  HeartPulse, 
+  Headphones, 
+  CalendarCheck, 
+  MessageSquare, 
+  Book 
 } from 'lucide-react';
 import './LocationStyles.css';
+
 const services = [
   {
-    title: "In-Person Consultations",
-    description: "Meet our team in a welcoming and private environment, where you can discuss your mental health needs face-to-face with our experienced professionals. Our consultations are designed to provide you with a personalized approach to mental wellness, ensuring that you feel heard and supported.",
-    icon: <UserCheck size={48} className="text-blue-500" />,
+    title: "Telepsychiatry Consultations",
+    description: "Connect with licensed psychiatrists through secure video consultations. Our telepsychiatry services provide you with personalized mental health care, including diagnosis, medication management, and therapy, all from the comfort of your home.",
+    icon: <Laptop size={48} className="text-blue-500" />,
   },
   {
-    title: "Online Therapy Sessions",
-    description: "Access our professional mental health services from the comfort of your home through secure and confidential online therapy sessions. Our online sessions are designed to provide the same level of care and support as in-person meetings.",
-    icon: <Video size={48} className="text-green-500" />,
+    title: "Virtual Behavioral Health Therapy",
+    description: "Receive expert counseling and therapy sessions tailored to your behavioral health needs. Our virtual therapy services offer a safe and confidential space for you to discuss your concerns and work towards better mental health.",
+    icon: <ShieldCheck size={48} className="text-green-500" />,
   },
   {
-    title: "Group Therapy",
-    description: "Join others in a supportive group setting to share experiences and find mutual support. Our group therapy sessions are facilitated by experienced counselors who create a safe and inclusive environment for everyone.",
+    title: "Online Group Therapy Sessions",
+    description: "Join virtual group therapy sessions facilitated by experienced mental health professionals. Connect with others facing similar challenges in a supportive online environment that promotes healing and growth.",
     icon: <Users size={48} className="text-purple-500" />,
   },
   {
-    title: "Workshops and Seminars",
-    description: "Participate in our engaging workshops and seminars designed to promote mental wellness and provide education on various mental health topics. Led by experts in the field, these sessions offer practical tools and insights.",
+    title: "Virtual Mental Health Assessments",
+    description: "Get comprehensive mental health assessments conducted virtually by our team of experts. These assessments are designed to identify your needs and develop a personalized care plan for your mental well-being.",
     icon: <ClipboardList size={48} className="text-yellow-500" />,
   },
   {
-    title: "Wellness Activities",
-    description: "Engage in holistic activities such as yoga, meditation, and mindfulness exercises to support your mental and physical health. These practices help reduce stress, increase self-awareness, and cultivate a balanced lifestyle.",
-    icon: <Activity size={48} className="text-red-500" />,
+    title: "Psychiatric Medication Management",
+    description: "Our psychiatrists provide ongoing medication management through virtual consultations. This service ensures that your treatment plan is effective and adjusted as needed for optimal mental health outcomes.",
+    icon: <Brain size={48} className="text-red-500" />,
   },
   {
-    title: "Family Counseling",
-    description: "Work with our experienced family therapists to improve communication and resolve conflicts within your family. Family counseling sessions help strengthen relationships and create a supportive home environment.",
-    icon: <Heart size={48} className="text-pink-500" />,
+    title: "Virtual Family Therapy",
+    description: "Engage in virtual family therapy sessions to address and resolve conflicts, improve communication, and strengthen relationships within your family. Our therapists provide expert guidance to support your family's mental health.",
+    icon: <Puzzle size={48} className="text-pink-500" />,
   },
   {
-    title: "Substance Abuse Treatment",
-    description: "Our substance abuse treatment program provides comprehensive support for individuals struggling with addiction. We offer detoxification, counseling, and aftercare planning to help you achieve and maintain sobriety.",
-    icon: <Shield size={48} className="text-indigo-500" />,
+    title: "Crisis Intervention via Telehealth",
+    description: "Access immediate support during mental health crises through our telehealth services. Our crisis intervention team is available 24/7 to provide urgent care and guidance when you need it most.",
+    icon: <LifeBuoy size={48} className="text-indigo-500" />,
   },
   {
-    title: "Stress Management",
-    description: "Learn effective techniques for managing stress and anxiety in your daily life. Our stress management program includes workshops, individual counseling, and practical tools to help you cope with life's challenges.",
-    icon: <Coffee size={48} className="text-brown-500" />,
+    title: "Stress and Anxiety Management",
+    description: "Participate in virtual sessions focused on managing stress and anxiety. Our mental health professionals will work with you to develop strategies and coping mechanisms that improve your overall well-being.",
+    icon: <HeartPulse size={48} className="text-red-500" />,
   },
   {
-    title: "Trauma Recovery",
-    description: "Receive specialized care and support to heal from past traumas. Our trauma recovery program includes therapy sessions, coping strategies, and a safe space to process your experiences.",
-    icon: <Brain size={48} className="text-teal-500" />,
+    title: "Trauma-Informed Virtual Care",
+    description: "Receive specialized virtual care to support your recovery from trauma. Our trauma-informed approach includes therapy and coping strategies designed to help you heal and regain control of your life.",
+    icon: <Headphones size={48} className="text-teal-500" />,
   },
   {
-    title: "Crisis Intervention",
-    description: "Get immediate support and intervention during times of crisis. Our crisis intervention team is available 24/7 to provide guidance and assistance when you need it most.",
-    icon: <Phone size={48} className="text-orange-500" />,
+    title: "Telehealth Follow-ups",
+    description: "Schedule regular telehealth follow-up appointments to monitor your progress and adjust your treatment plan as needed. These sessions ensure continuity of care and help you stay on track with your mental health goals.",
+    icon: <CalendarCheck size={48} className="text-orange-500" />,
   },
   {
-    title: "Mindfulness Training",
-    description: "Develop mindfulness skills to improve focus and emotional regulation. Our mindfulness training sessions teach you how to be present in the moment and reduce negative thinking patterns.",
-    icon: <Calendar size={48} className="text-cyan-500" />,
+    title: "Psychiatric Consultation Messaging",
+    description: "Communicate directly with your psychiatrist through our secure messaging platform. This service allows you to ask questions, request prescription refills, and receive timely advice between appointments.",
+    icon: <MessageSquare size={48} className="text-cyan-500" />,
   },
   {
-    title: "Educational Resources",
-    description: "Access a wide range of educational materials and resources on mental health topics. Our library includes books, articles, and online courses designed to expand your knowledge and understanding.",
-    icon: <BookOpen size={48} className="text-lime-500" />,
+    title: "Educational Mental Health Resources",
+    description: "Access a library of educational materials, including articles, videos, and e-books, designed to help you better understand your mental health and treatment options.",
+    icon: <Book size={48} className="text-lime-500" />,
   },
 ];
-
 
 const serviceVariants = {
   hidden: { opacity: 0, translateY: 50 },
@@ -87,7 +87,7 @@ const serviceVariants = {
 };
 
 const ServicesSection: React.FC = () => {
-    useEffect(() => {
+  useEffect(() => {
     anime({
       targets: '.service-card',
       translateY: [-50, 0],
@@ -97,6 +97,7 @@ const ServicesSection: React.FC = () => {
       easing: 'easeOutExpo'
     });
   }, []);
+
   const renderServices = (services: { title: string; description: string; icon: JSX.Element }[]) => {
     return services.map((service, index) => (
       <InView key={index} triggerOnce={true} threshold={0.5}>
@@ -123,13 +124,12 @@ const ServicesSection: React.FC = () => {
     <div className="max-w-8xl p-5 bg-gradient-to-r from-indigo-600 to-blue-500 max-md:max-w-xl mx-auto font-[sans-serif] my-4">
       <div className="text-center ml5 max-w-2xl mx-auto">
         <h2 className="text-white text-3xl font-extrabold text-center mb-6">
-          Comprehensive Mental Health Services
+          Comprehensive Virtual Mental Health Services
         </h2>
         <p className="text-white text-sm">
-          Our team of experienced professionals is committed to creating a safe, welcoming, and confidential environment 
-          where you can explore your thoughts and feelings. We offer both individual and group sessions, tailored to meet 
-          your unique needs. From in-person consultations to online therapy sessions, our flexible options ensure that 
-          you can access the support you need, when and where it suits you.
+          Our team of experienced professionals is committed to creating a safe, welcoming, and confidential virtual environment 
+          where you can explore your thoughts and feelings. We offer a range of telehealth services tailored to meet your unique needs, 
+          ensuring that you can access the support you need, when and where it suits you.
         </p>
       </div>
       <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">

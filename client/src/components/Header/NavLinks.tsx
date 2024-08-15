@@ -15,14 +15,7 @@ const NavMenu: React.FC<{ isMenuOpen: boolean; toggleMenu: () => void }> = ({ is
 		name: 'Programs',
 		to: '/programs',
 	},
-	{
-		name: 'Mental Health',
-		to: '/mental-health',
-	},
-	{
-		name: 'Substance Abuse',
-		to: '/substance-abuse',
-	},
+
 	{
 		name: 'About',
 		to: '/about-section',

@@ -5,79 +5,79 @@ import './styles.css';
 interface StatsProps {
   className?: string;
 }
-
 const statsData = [
   {
     number: '10+',
-    label: 'Years of Excellence',
-    description: 'Over a decade of dedicated service in mental health, fostering resilience and recovery in our community.',
+    label: 'Years of Virtual Care',
+    description: 'A decade of excellence in delivering telehealth and virtual psychiatric services, providing accessible care to our community.',
     bgColor: 'bg-blue-700',
     textColor: 'text-white',
   },
   {
     number: '1,000+',
-    label: 'Lives Transformed',
-    description: 'Providing personalized mental health care, transforming the lives of individuals and families through compassion and innovation.',
+    label: 'Patients Served',
+    description: 'Empowering over a thousand individuals through personalized virtual mental health care, fostering resilience and recovery.',
     bgColor: 'bg-teal-500',
     textColor: 'text-white',
   },
   {
     number: '150+',
-    label: 'Qualified Professionals',
-    description: 'Our team consists of experienced therapists and counselors committed to mental wellness and holistic healing.',
+    label: 'Expert Practitioners',
+    description: 'Our team of licensed psychiatrists, therapists, and counselors are dedicated to delivering high-quality virtual mental health services.',
     bgColor: 'bg-purple-700',
     textColor: 'text-white',
   },
   {
     number: '30+',
-    label: 'Community Programs',
-    description: 'Offering a variety of programs that educate and empower individuals to overcome mental health challenges.',
+    label: 'Telehealth Programs',
+    description: 'Offering a range of telehealth programs designed to address diverse mental health needs, from therapy to psychiatric care.',
     bgColor: 'bg-green-600',
     textColor: 'text-white',
   },
   {
     number: '25',
-    label: 'Awards & Recognitions',
-    description: 'Honored for excellence in mental health care, recognized by leading organizations for our contributions and innovations.',
+    label: 'Industry Awards',
+    description: 'Recognized for innovation and excellence in telemedicine and mental health services by leading industry organizations.',
     bgColor: 'bg-yellow-500',
     textColor: 'text-gray-800',
   },
   {
     number: '500+',
-    label: 'Support Groups',
-    description: 'Providing a safe space for sharing experiences and supporting each other in recovery, fostering community and connection.',
+    label: 'Virtual Support Sessions',
+    description: 'Facilitating numerous virtual support groups, creating safe spaces for sharing experiences and supporting mental health recovery.',
     bgColor: 'bg-pink-600',
     textColor: 'text-white',
   },
   {
     number: '20+',
-    label: 'Online Resources',
-    description: 'Access a wealth of information and tools online to help manage mental health and enhance well-being anytime, anywhere.',
+    label: 'Online Mental Health Resources',
+    description: 'Providing accessible online resources, including articles, tools, and videos, to help manage mental health anytime, anywhere.',
     bgColor: 'bg-indigo-600',
     textColor: 'text-white',
   },
   {
     number: '50+',
-    label: 'Wellness Workshops',
-    description: 'Engage in interactive workshops focused on mindfulness, stress reduction, and emotional regulation for a balanced life.',
+    label: 'Webinars & Workshops',
+    description: 'Engaging virtual workshops and webinars focused on mental health topics such as stress management and emotional well-being.',
     bgColor: 'bg-red-500',
     textColor: 'text-white',
   },
   {
     number: '200+',
-    label: 'Youth Programs',
-    description: 'Dedicated programs for young people to support mental health education, early intervention, and skill development.',
+    label: 'Youth Telehealth Sessions',
+    description: 'Offering specialized telehealth services for youth, focusing on mental health education, early intervention, and support.',
     bgColor: 'bg-orange-500',
     textColor: 'text-white',
   },
   {
     number: '100%',
-    label: 'Confidential Care',
-    description: 'Committed to protecting your privacy, ensuring that all sessions and personal information are kept confidential.',
+    label: 'Confidential Telecare',
+    description: 'Ensuring the highest level of privacy and confidentiality in all virtual sessions, safeguarding your personal information.',
     bgColor: 'bg-cyan-600',
     textColor: 'text-white',
   },
 ];
+
 
 const Statistics: React.FC<StatsProps> = ({ className }: StatsProps) => {
   // State to track visibility

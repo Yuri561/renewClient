@@ -2,7 +2,7 @@ import HeroContent from './HeroContent';
 import HeroImage from './HeroImage';
 import Statistics from './Statistics';
 // import FeatureCards from './FeatureCards';
-import './styles.css';
+
 
 const HeroSection: React.FC = () => {
   return (

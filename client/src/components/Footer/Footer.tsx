@@ -1,4 +1,4 @@
-
+import {Link } from 'react-router-dom';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 py-14 px-16 font-sans tracking-wide relative">
@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
           <h2 className="text-white text-lg font-semibold mb-4">Quick Links</h2>
           <ul className="space-y-4">
             <li>
-              <a href="#" className="text-gray-300 hover:text-white text-sm transition-all">Our Services</a>
+              <a href="programs" className="text-gray-300 hover:text-white text-sm transition-all">Our Services</a>
             </li>
             <li>
               <a href="#" className="text-gray-300 hover:text-white text-sm transition-all">Mental Health Resources</a>
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           <h2 className="text-white text-lg font-semibold mb-4">Company</h2>
           <ul className="space-y-4">
             <li>
-              <a href="#" className="text-gray-300 hover:text-white text-sm transition-all">About Us</a>
+              <Link to="/about-section" className="text-gray-300 hover:text-white text-sm transition-all">About Us</Link>
             </li>
             <li>
               <a href="#" className="text-gray-300 hover:text-white text-sm transition-all">Privacy Policy</a>

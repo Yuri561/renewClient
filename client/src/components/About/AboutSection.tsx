@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 
 const AboutSection: React.FC = () => {
   return (
-    <div className="mt-[50px] mb-6 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-500 px-6 sm:py-20 py-10 font-sans text-slate-600">
+    <div className="mt-[50px] mb-6 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-500 px-6 sm:py-20 py-10 font-sans text-slate-600" id='about'>
       <div className="bg-white  rounded text-light p-2 mt-6 lg:mt-12 max-w-8xl mx-auto text-center">
         <motion.h1
           className="text-5xl sm:text-4xl font-extrabold leading-tight mb-6 mt-6"

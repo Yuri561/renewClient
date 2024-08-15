@@ -53,12 +53,13 @@ const MainSection = () => {
               Benefits of Joining Our Community
             </motion.h2>
             <motion.ul variants={itemVariants}>
-              <motion.li className="text-sm mt-4 leading-relaxed">Personalized Care Plans tailored to individual needs for better mental health outcomes.</motion.li>
-              <motion.li className="text-sm leading-relaxed">Access to Qualified Professionals including therapists, counselors, and psychiatrists.</motion.li>
-              <motion.li className="text-sm leading-relaxed">Secure and Confidential Online Sessions ensuring your privacy and comfort.</motion.li>
-              <motion.li className="text-sm leading-relaxed">On-demand Resources such as articles, podcasts, and self-help tools.</motion.li>
-              <motion.li className="text-sm leading-relaxed">Community Support from peers who share similar experiences and challenges.</motion.li>
-              <motion.li className="text-sm leading-relaxed">Workshops and Webinars focusing on key aspects of mental health and well-being.</motion.li>
+              <motion.li className="text-sm mt-4 leading-relaxed">Customized Telehealth Plans designed to meet individual mental health needs for optimal outcomes.</motion.li>
+<motion.li className="text-sm leading-relaxed">Direct Access to Licensed Professionals, including virtual therapists, counselors, and psychiatrists.</motion.li>
+<motion.li className="text-sm leading-relaxed">Private and Secure Online Consultations, ensuring your comfort and confidentiality.</motion.li>
+<motion.li className="text-sm leading-relaxed">Comprehensive On-demand Resources, including articles, podcasts, and interactive self-help tools.</motion.li>
+<motion.li className="text-sm leading-relaxed">Peer Support Communities to connect with others facing similar mental health challenges.</motion.li>
+<motion.li className="text-sm leading-relaxed">Interactive Workshops and Webinars focused on mental health, psychiatric care, and overall well-being.</motion.li>
+
             </motion.ul>
           </div>
         </motion.div>

@@ -33,7 +33,7 @@ const ProgramsSection: React.FC = () => {
     };
 
     return (
-        <div className="bg-gray-800 p-4 text-white">
+        <div className="bg-gray-800 p-4 text-white" id='programs'>
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                     <div>
@@ -76,18 +76,14 @@ const ProgramsSection: React.FC = () => {
                 <div className="flex justify-between items-center mt-4">
                     <button
                         onClick={handleSearch}
-                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300 text-center items-center"
                     >
                         Search
                     </button>
-                    <button
-                        className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300"
-                    >
-                        Add New Program
-                    </button>
+                
                 </div>
                 <div className="mt-6">
-                     {showResults && renderComponentBasedOnIssue(selectedIssue)} 
+                     {showResults && renderComponentBasedOnIssue(selectedIssue)}
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import './HeroContent.css';
 
 const HeroContent: React.FC = () => {
   // State to track visibility
@@ -56,7 +57,7 @@ const HeroContent: React.FC = () => {
       initial="hidden"
       animate={isVisible ? 'visible' : 'hidden'} // Trigger animations based on visibility
     >
-      <div className="p-9 bg-gradient-to-r from-blue-600 to-yellow-500 z-0 rounded">
+      <div className="p-9 bg-gradient-to-r from-blue-600 to-yellow-500 z-0 rounded relative">
         <motion.h2
           className="text-slate-200 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]"
           variants={itemVariants}
@@ -67,23 +68,9 @@ const HeroContent: React.FC = () => {
           className="text-white text-lg mt-6 leading-relaxed"
           variants={itemVariants}
         >
-          Join a community dedicated to supporting your mental health journey. Our platform offers comprehensive services tailored to meet individual needs, ranging from therapy sessions with licensed professionals to self-guided wellness tools.
+         Our telehealth platform connects you with experienced healthcare providers for personalized, confidential, and compassionate care. Whether you're seeking support for anxiety, depression, stress, or other mental health challenges, we are here to help. At Renewing Of the Mind PLLC, we believe in empowering individuals through innovative virtual healthcare solutions, making it easier than ever to prioritize your mental well-being.
         </motion.p>
-        {/* <motion.ul
-          className="list-disc list-inside space-y-2 text-white mt-4 text-base"
-          variants={containerVariants}
-        >
-          {[
-            'Access to a diverse team of mental health professionals, including psychologists, therapists, and counselors.',
-            'Personalized treatment plans that adapt to your unique circumstances and goals.',
-            'Convenient, secure, and private online sessions that fit your lifestyle.',
-            'Resource libraries filled with educational materials to help you understand and manage your mental health.'
-          ].map((text, index) => (
-            <motion.li key={index} variants={itemVariants}>
-              {text}
-            </motion.li>
-          ))}
-        </motion.ul> */}
+
         <motion.button
           type="button"
           className="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5 transition-colors duration-300"
@@ -93,6 +80,15 @@ const HeroContent: React.FC = () => {
         >
           <a href="#services-section">Explore Our Services</a>
         </motion.button>
+
+        {/* Floating Bubbles for Added Effect */}
+        <div className="floating-bubbles">
+          <div className="bubble bubble-1"></div>
+          <div className="bubble bubble-2"></div>
+          <div className="bubble bubble-3"></div>
+          <div className="bubble bubble-4"></div>
+          <div className="bubble bubble-5"></div>
+        </div>
       </div>
     </motion.div>
   );
