@@ -17,7 +17,7 @@ const OnlineZoomSection: React.FC = () => {
   };
 
   const handleScheduleClick = () => {
-    window.open('https://calendly.com/cloudflow34/mental-awareness', '_blank');
+    window.open('https://calendly.com/admin-renewingofthemindpllc/30min', '_blank');
   };
 
   return (

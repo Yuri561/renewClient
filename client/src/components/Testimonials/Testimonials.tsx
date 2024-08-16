@@ -1,119 +1,155 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import * as React from "react";
-import { useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { distance } from "@popmotion/popcorn";
-import "./TestimonialsStyles.css";
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import './TestimonialsStyles.css';
+const testimonialsData = [
+  {
+    quote: "Renewing Of The Mind PLLC has truly transformed my life. The personalized care and attention to detail are unmatched.",
+    author: "John Doe",
+    role: "Patient",
+  },
+  {
+    quote: "The virtual therapy sessions are convenient and have made a significant difference in my mental health journey.",
+    author: "Jane Smith",
+    role: "Patient",
+  },
+  {
+    quote: "I highly recommend their services. The support and resources provided are top-notch.",
+    author: "Alice Johnson",
+    role: "Patient",
+  },
+  {
+    quote: "The team at Renewing Of The Mind PLLC is incredible. They truly care about their patients and go above and beyond.",
+    author: "Michael Brown",
+    role: "Patient",
+  },
+  {
+    quote: "I was hesitant about virtual therapy, but this experience has exceeded all my expectations.",
+    author: "Emily Davis",
+    role: "Patient",
+  },
+  {
+    quote: "Their approach to mental health is both compassionate and effective. I feel better than I have in years.",
+    author: "Chris Wilson",
+    role: "Patient",
+  },
+  {
+    quote: "Renewing Of The Mind PLLC offers a level of support and understanding that I haven't found anywhere else.",
+    author: "Laura White",
+    role: "Patient",
+  },
+  {
+    quote: "The convenience of telehealth, combined with their expertise, makes this service invaluable.",
+    author: "David Johnson",
+    role: "Patient",
+  },
+  {
+    quote: "I've been to many therapists, but the care I've received here is unparalleled. Highly recommend!",
+    author: "Sarah Lee",
+    role: "Patient",
+  },
+  {
+    quote: "The resources and tools provided have helped me manage my mental health better than I ever could on my own.",
+    author: "James Miller",
+    role: "Patient",
+  },
+  {
+    quote: "Their services have been a lifeline for me during a very difficult time in my life.",
+    author: "Anna Garcia",
+    role: "Patient",
+  },
+  {
+    quote: "I feel heard and understood like never before. The staff is amazing.",
+    author: "Mark Anderson",
+    role: "Patient",
+  },
+  {
+    quote: "The ease of access to professional mental health care through their platform is incredible.",
+    author: "Sophia Martinez",
+    role: "Patient",
+  },
+  {
+    quote: "From the first session, I felt a connection and a sense of hope. They've made a big difference in my life.",
+    author: "Daniel Thomas",
+    role: "Patient",
+  },
+  {
+    quote: "The holistic approach they use addresses every aspect of mental wellness. I'm grateful for their support.",
+    author: "Olivia Taylor",
+    role: "Patient",
+  },
+  {
+    quote: "Their commitment to mental health is evident in everything they do. I've seen real results.",
+    author: "Matthew Lewis",
+    role: "Patient",
+  },
+  {
+    quote: "They've given me the tools to manage my anxiety in ways I never thought possible.",
+    author: "Samantha Harris",
+    role: "Patient",
+  },
+  {
+    quote: "The telehealth platform is user-friendly and makes scheduling easy. I can't imagine going back to traditional therapy.",
+    author: "Brian Walker",
+    role: "Patient",
+  },
+  {
+    quote: "I was struggling with depression, but their team has helped me find a way forward. I'm eternally grateful.",
+    author: "Nicole Young",
+    role: "Patient",
+  },
+  {
+    quote: "Renewing Of The Mind PLLC is a game-changer in mental health care. Their service is unmatched.",
+    author: "Kevin King",
+    role: "Patient",
+  },
+];
 
-const grid = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]];
-const size = 60;
-const gap = 10;
 
-const Square = ({ active, setActive, colIndex, rowIndex, x, y }: { active: { row: number, col: number }, setActive: React.Dispatch<React.SetStateAction<{ row: number, col: number }>>, colIndex: number, rowIndex: number, x: any, y: any }) => {
-  const isDragging = colIndex === active.col && rowIndex === active.row;
-  const diagonalIndex = (360 / 6) * (colIndex + rowIndex);
-  const d = distance(
-    { x: active.col, y: active.row },
-    { x: colIndex, y: rowIndex }
-  );
-  const springConfig = {
-    stiffness: Math.max(700 - d * 120, 0),
-    damping: 20 + d * 5
+const Testimonials: React.FC = () => {
+  const [current, setCurrent] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrent((prev) => (prev === testimonialsData.length - 1 ? 0 : prev + 1));
   };
-  const dx = useSpring(x, springConfig);
-  const dy = useSpring(y, springConfig);
-   const letter = String.fromCharCode(65 + colIndex + rowIndex * grid[0].length);
-  return (
-    <motion.div
-      drag
-      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-      dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
-      dragElastic={1}
-      onDragStart={() => setActive({ row: rowIndex, col: colIndex })}
-      style={{
-        background: `hsla(calc(var(--base-hue) + ${diagonalIndex}), 80%, 60%, 1)`,
-        width: size,
-        height: size,
 
-        top: rowIndex * (size + gap),
-        left: colIndex * (size + gap),
-        transition: "background 0.3s ease",
-        cursor: isDragging ? "grabbing" : "pointer",
-        color: 'white',
-        fontSize: '20px',
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        bottom: '-150px',
-        position: "absolute",
-        borderRadius: "50%",
-        x: isDragging ? x : dx,
-        y: isDragging ? y : dy,
-        zIndex: isDragging ? 1 : 0
-      }}
-      
-    >
-      {letter}
-    </motion.div>
+  const prevTestimonial = () => {
+    setCurrent((prev) => (prev === 0 ? testimonialsData.length - 1 : prev - 1));
+  };
+
+  return (
+    <div className="testimonial-container">
+      <motion.div
+        className="testimonial-wrapper"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
+            className="testimonial-card"
+          >
+            <p className="testimonial-quote">"{testimonialsData[current].quote}"</p>
+            <p className="testimonial-author">- {testimonialsData[current].author}</p>
+            <p className="testimonial-role">{testimonialsData[current].role}</p>
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
+      <div className="testimonial-navigation">
+        <button onClick={prevTestimonial} className="nav-button">
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button onClick={nextTestimonial} className="nav-button">
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+    </div>
   );
 };
 
-const Testimonials: React.FC = () => {
-  const [active, setActive] = useState({ row: 0, col: 0 });
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  return (
-    <div className="app">
-      <motion.div
-        animate={{ "--base-hue": 360 } as any}
-        initial={{ "--base-hue": 0 } as any}
-        transition={{ duration: 10, loop: Infinity, ease: "linear" }}
-        style={{ width: "100%", height: "100%", padding: "5rem", position: "relative", right: "50px"}}
-      >
-        <motion.div
-          style={{
-            display: "flex",
-            width: '100%',
-            height: (size + gap) * 4 - gap,
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            position: "relative",
-            perspective: 500,
-            bottom: '-150px',
-            justifyContent: "center",
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            margin: 'auto',
-          }}
-        >
-          {grid.map((row, rowIndex) =>
-            row.map((_item, colIndex) => (
-              <Square
-                x={x}
-                y={y}
-                active={active}
-                setActive={setActive}
-                rowIndex={rowIndex}
-                colIndex={colIndex}
-                key={rowIndex + colIndex}
-               
-
-              />
-            ))
-          )}
-        </motion.div>
-      </motion.div>
-    </div>
-  );
-}
-
 export default Testimonials;
-
-
-
-
-
-
-

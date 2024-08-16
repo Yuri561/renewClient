@@ -35,7 +35,7 @@ const NavMenu: React.FC<{ isMenuOpen: boolean; toggleMenu: () => void }> = ({ is
       )}
       <ul className={`lg:flex lg:gap-x-10 ${isMenuOpen ? 'block' : 'hidden'} max-lg:fixed max-lg:bg-[#151d20] max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:px-10 max-lg:py-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50`}>
         <li className='mb-6 hidden max-lg:block'>
-          <a href="javascript:void(0)"><img src={Logo} alt="Logo" className='w-36 items-center' /></a>
+          <img src={Logo} alt="Logo" className='w-20 rounded-full items-center ' />
         </li>
         {navLinkArr.map((link, index) => (
           <li key={index} className='max-lg:border-b max-lg:py-3 relative lg:hover:after:absolute lg:after:bg-white lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:-bottom-4 lg:after:transition-all lg:after:duration-300'>

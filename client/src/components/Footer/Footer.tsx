@@ -1,4 +1,9 @@
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Logo from '../../../public/LOGO.png';
+
+
+
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 py-14 px-16 font-sans tracking-wide relative">
@@ -49,7 +54,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex items-center lg:justify-center">
-          <a href='#'><img src="/LOGO.png" alt="Renewing The Mind PLLC Logo" className='w-60' /></a>
+          <a href='#'><img src={Logo} alt="Renewing The Mind PLLC Logo" className='w-60 rounded-full' /></a>
         </div>
       </div>
 
