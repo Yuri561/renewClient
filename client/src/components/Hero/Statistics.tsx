@@ -111,9 +111,10 @@ const Statistics: React.FC<StatsProps> = ({ className }: StatsProps) => {
   }, []);
 
   return (
-    <div className="mt-[8rem] p-8">
+    <div className="mt-[8rem] bg-white p-8">
+      
       <div className="text-center items-center">
-        <h2 className="text-slate-200 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]">Your Mind Matters</h2>
+        <h2 className="text-slate-800 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]">Your Mind Matters</h2>
       </div>
       <div
         ref={sectionRef} // Attach ref to observe

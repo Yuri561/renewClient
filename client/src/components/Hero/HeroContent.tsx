@@ -57,15 +57,15 @@ const HeroContent: React.FC = () => {
       initial="hidden"
       animate={isVisible ? 'visible' : 'hidden'} // Trigger animations based on visibility
     >
-      <div className="p-9 bg-gradient-to-r from-blue-600 to-yellow-500 z-0 rounded relative">
+      <div className="p-9 bg-white  z-0 rounded relative">
         <motion.h2
-          className="text-slate-200 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]"
+          className="text-slate-800 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]"
           variants={itemVariants}
         >
           <span className="text-yellow-500">Enhance</span> Your Well-being with <span className="text-yellow-500">Tailored</span> Mental Health Solutions
         </motion.h2>
         <motion.p
-          className="text-white text-lg mt-6 leading-relaxed"
+          className="text-slate-800 text-lg mt-6 leading-relaxed"
           variants={itemVariants}
         >
          Our telehealth platform connects you with experienced healthcare providers for personalized, confidential, and compassionate care. Whether you're seeking support for anxiety, depression, stress, or other mental health challenges, we are here to help. At Renewing Of the Mind PLLC, we believe in empowering individuals through innovative virtual healthcare solutions, making it easier than ever to prioritize your mental well-being.

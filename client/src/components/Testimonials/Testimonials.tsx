@@ -1,153 +1,58 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import './TestimonialsStyles.css';
-const testimonialsData = [
+import { motion } from 'framer-motion';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+
+const faqData = [
   {
-    quote: "Renewing Of The Mind PLLC has truly transformed my life. The personalized care and attention to detail are unmatched.",
-    author: "John Doe",
-    role: "Patient",
+    question: "What services does Renewing Of The Mind PLLC offer?",
+    answer: "We offer a wide range of mental health services including personalized care plans, virtual therapy sessions, crisis intervention, and 24/7 support.",
   },
   {
-    quote: "The virtual therapy sessions are convenient and have made a significant difference in my mental health journey.",
-    author: "Jane Smith",
-    role: "Patient",
+    question: "How do I book a telehealth appointment?",
+    answer: "Booking a telehealth appointment is easy. You can use our online booking system to schedule a session at a time that is convenient for you.",
   },
   {
-    quote: "I highly recommend their services. The support and resources provided are top-notch.",
-    author: "Alice Johnson",
-    role: "Patient",
+    question: "Are my sessions confidential?",
+    answer: "Yes, all of our sessions are conducted in a secure and confidential manner. Your privacy is our top priority.",
   },
   {
-    quote: "The team at Renewing Of The Mind PLLC is incredible. They truly care about their patients and go above and beyond.",
-    author: "Michael Brown",
-    role: "Patient",
+    question: "What should I expect during my first session?",
+    answer: "During your first session, we will assess your needs and discuss your mental health goals. This helps us create a personalized care plan tailored to you.",
   },
-  {
-    quote: "I was hesitant about virtual therapy, but this experience has exceeded all my expectations.",
-    author: "Emily Davis",
-    role: "Patient",
-  },
-  {
-    quote: "Their approach to mental health is both compassionate and effective. I feel better than I have in years.",
-    author: "Chris Wilson",
-    role: "Patient",
-  },
-  {
-    quote: "Renewing Of The Mind PLLC offers a level of support and understanding that I haven't found anywhere else.",
-    author: "Laura White",
-    role: "Patient",
-  },
-  {
-    quote: "The convenience of telehealth, combined with their expertise, makes this service invaluable.",
-    author: "David Johnson",
-    role: "Patient",
-  },
-  {
-    quote: "I've been to many therapists, but the care I've received here is unparalleled. Highly recommend!",
-    author: "Sarah Lee",
-    role: "Patient",
-  },
-  {
-    quote: "The resources and tools provided have helped me manage my mental health better than I ever could on my own.",
-    author: "James Miller",
-    role: "Patient",
-  },
-  {
-    quote: "Their services have been a lifeline for me during a very difficult time in my life.",
-    author: "Anna Garcia",
-    role: "Patient",
-  },
-  {
-    quote: "I feel heard and understood like never before. The staff is amazing.",
-    author: "Mark Anderson",
-    role: "Patient",
-  },
-  {
-    quote: "The ease of access to professional mental health care through their platform is incredible.",
-    author: "Sophia Martinez",
-    role: "Patient",
-  },
-  {
-    quote: "From the first session, I felt a connection and a sense of hope. They've made a big difference in my life.",
-    author: "Daniel Thomas",
-    role: "Patient",
-  },
-  {
-    quote: "The holistic approach they use addresses every aspect of mental wellness. I'm grateful for their support.",
-    author: "Olivia Taylor",
-    role: "Patient",
-  },
-  {
-    quote: "Their commitment to mental health is evident in everything they do. I've seen real results.",
-    author: "Matthew Lewis",
-    role: "Patient",
-  },
-  {
-    quote: "They've given me the tools to manage my anxiety in ways I never thought possible.",
-    author: "Samantha Harris",
-    role: "Patient",
-  },
-  {
-    quote: "The telehealth platform is user-friendly and makes scheduling easy. I can't imagine going back to traditional therapy.",
-    author: "Brian Walker",
-    role: "Patient",
-  },
-  {
-    quote: "I was struggling with depression, but their team has helped me find a way forward. I'm eternally grateful.",
-    author: "Nicole Young",
-    role: "Patient",
-  },
-  {
-    quote: "Renewing Of The Mind PLLC is a game-changer in mental health care. Their service is unmatched.",
-    author: "Kevin King",
-    role: "Patient",
-  },
+
 ];
 
-
-const Testimonials: React.FC = () => {
-  const [current, setCurrent] = useState(0);
-
-  const nextTestimonial = () => {
-    setCurrent((prev) => (prev === testimonialsData.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevTestimonial = () => {
-    setCurrent((prev) => (prev === 0 ? testimonialsData.length - 1 : prev - 1));
-  };
+const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="testimonial-container">
-      <motion.div
-        className="testimonial-wrapper"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+    <div className="mb-4 border-b border-gray-300 pb-4">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full text-left flex justify-between items-center text-lg font-medium text-gray-700 focus:outline-none"
       >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-            className="testimonial-card"
-          >
-            <p className="testimonial-quote">"{testimonialsData[current].quote}"</p>
-            <p className="testimonial-author">- {testimonialsData[current].author}</p>
-            <p className="testimonial-role">{testimonialsData[current].role}</p>
-          </motion.div>
-        </AnimatePresence>
+        <span>{question}</span>
+        {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+      </button>
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+        className="overflow-hidden"
+      >
+        <p className="mt-2 text-gray-600">{answer}</p>
       </motion.div>
-      <div className="testimonial-navigation">
-        <button onClick={prevTestimonial} className="nav-button">
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button onClick={nextTestimonial} className="nav-button">
-          <ChevronRight className="w-6 h-6" />
-        </button>
-      </div>
+    </div>
+  );
+};
+
+const Testimonials: React.FC = () => {
+  return (
+    <div className="px-4 py-10 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+      {faqData.map((faq, index) => (
+        <FAQItem key={index} question={faq.question} answer={faq.answer} />
+      ))}
     </div>
   );
 };
