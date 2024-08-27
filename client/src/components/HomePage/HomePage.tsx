@@ -2,17 +2,17 @@
 
 import HeroSection from '../Hero/HeroSection';
 
-import MainSection from '../Testimonials/MainSection';
-import LocationSection from '../Location/LocationSection';
+// import MainSection from '../Testimonials/MainSection';
+// import LocationSection from '../Location/LocationSection';
 
 
-const HomePage: React.FC = () => { 
+const HomePage: React.FC = () => {
     return (
         <div>
 
             <HeroSection />
-            <MainSection />
-            <LocationSection />
+            {/* <MainSection />
+            <LocationSection /> */}
 
         </div>
     );

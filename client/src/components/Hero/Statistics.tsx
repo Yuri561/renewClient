@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import './styles.css';
+import './HeroContent.css';
 
 interface StatsProps {
   className?: string;
@@ -114,7 +115,7 @@ const Statistics: React.FC<StatsProps> = ({ className }: StatsProps) => {
     <div className="mt-[8rem] bg-white p-8">
       
       <div className="text-center items-center">
-        <h2 className="text-slate-800 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]">Your Mind Matters</h2>
+        <h2 className="text-slate-800 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]">Your <span className="text-yellow-500">  Mind</span> Matters</h2>
       </div>
       <div
         ref={sectionRef} // Attach ref to observe
@@ -136,6 +137,13 @@ const Statistics: React.FC<StatsProps> = ({ className }: StatsProps) => {
           </motion.div>
         ))}
       </div>
+        <div className="floating-bubbles">
+          <div className="bubble bubble-1"></div>
+          <div className="bubble bubble-2"></div>
+          <div className="bubble bubble-3"></div>
+          <div className="bubble bubble-4"></div>
+          <div className="bubble bubble-5"></div>
+        </div>
     </div>
   );
 };

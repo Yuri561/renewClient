@@ -50,13 +50,13 @@ const MainSection = () => {
           <Testimonials />
           <div className="text-white font-extrabold">
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl leading-tight"
+              className="text-4xl text-white md:text-5xl lg:text-6xl leading-tight"
               variants={itemVariants}
             >
               Discover Your Inner Strength
             </motion.h1>
             <motion.h2
-              className="sm:text-base md:text-lg lg:text-xl font-extrabold mt-4"
+              className="sm:text-base text-white md:text-lg lg:text-xl font-extrabold mt-4"
               variants={itemVariants}
             >
               Benefits of Joining Our Community
@@ -65,21 +65,11 @@ const MainSection = () => {
               <motion.li className="text-sm mt-4 leading-relaxed">
                 Customized Telehealth Plans designed to meet individual mental health needs for optimal outcomes.
               </motion.li>
-              <motion.li className="text-sm leading-relaxed">
-                Direct Access to Licensed Professionals, including virtual therapists, counselors, and psychiatrists.
-              </motion.li>
+    
               <motion.li className="text-sm leading-relaxed">
                 Private and Secure Online Consultations, ensuring your comfort and confidentiality.
               </motion.li>
-              <motion.li className="text-sm leading-relaxed">
-                Comprehensive On-demand Resources, including articles, podcasts, and interactive self-help tools.
-              </motion.li>
-              <motion.li className="text-sm leading-relaxed">
-                Peer Support Communities to connect with others facing similar mental health challenges.
-              </motion.li>
-              <motion.li className="text-sm leading-relaxed">
-                Interactive Workshops and Webinars focused on mental health, psychiatric care, and overall well-being.
-              </motion.li>
+              
             </motion.ul>
           </div>
         </motion.div>

@@ -1,91 +1,57 @@
-import { Autoplay, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { motion } from 'framer-motion';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-
 import './HeroImageCarousel.css';
 
 const HeroSection: React.FC = () => {
-  const slidesContent = [
-    {
-      title: "Telehealth Services",
-      description: "Experience the convenience and accessibility of telehealth. Connect with our experienced professionals for personalized mental health care from the comfort of your home.",
-    },
-    {
-      title: "Comprehensive Telemedicine",
-      description: "Receive expert psychiatric care through our secure telemedicine platform. Whether it's diagnosis, treatment, or ongoing support, we've got you covered.",
-    },
-    {
-      title: "Virtual Behavioral Health",
-      description: "Engage in virtual therapy sessions tailored to your unique needs. Our therapists provide support that adapts to your lifestyle and mental health goals.",
-    },
-    {
-      title: "Virtual Psychiatric Services",
-      description: "Our virtual psychiatric services offer specialized care for a variety of mental health conditions. Benefit from treatment plans designed just for you.",
-    },
-    {
-      title: "Crisis Intervention",
-      description: "In a mental health crisis? Our 24/7 virtual crisis intervention services provide immediate support when you need it most.",
-    },
-  ];
-
-  const slideVariant = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
-
   return (
-    <div className="relative hero-section-container mx-auto max-w-full overflow-hidden bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-900">
-      <div className="overlay"></div>
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={1}
-        modules={[Autoplay, Pagination]}
-        centeredSlides={true}
-        autoplay={{
-          delay: 3500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-        }}
-        loop={true}
-        className="relative mySwiper rounded"
-      >
-        {slidesContent.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <motion.div
-              className="swiper-slide-content"
-              variants={slideVariant}
-              initial="hidden"
-              animate="visible"
-            >
-              <h2 className="text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
-                {slide.title}
-              </h2>
-              <p className="text-2xl text-white leading-relaxed drop-shadow-lg">
-                {slide.description}
-              </p>
-            </motion.div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div className="font-[sans-serif] w-full bg-slate-300 py-8 px-6">
+      <div className="max-w-4xl mx-auto text-center backdrop-blur-lg bg-white bg-opacity-30 border border-white border-opacity-10 rounded-xl shadow-md py-12 px-6">
+        <h2 className="md:text-5xl text-3xl font-bold md:leading-[55px] text-white">
+          Renewing of the Mind PLLC
+        </h2>
+        <p className="mt-6 text-sm leading-relaxed text-gray-900">
+          Discover the benefits of telehealth with secure, convenient, and accessible care from the comfort of your home. Connect with us to begin your journey towards better health and well-being.
+        </p>
+      </div>
 
-      {/* Floating Elements for Added Effect */}
-      <motion.div
-        className="floating-elements"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 1.5, delay: 0.5 } }}
-      >
-        <div className="circle circle-1"></div>
-        <div className="circle circle-2"></div>
-        <div className="circle circle-3"></div>
-      </motion.div>
+      <div className="xl:max-w-5xl max-w-3xl mx-auto mt-12">
+        <div className="grid xl:grid-cols-4 md:grid-cols-2 gap-6">
+          <div className="p-6 bg-white bg-opacity-30 backdrop-blur-md rounded-lg shadow-lg border border-white border-opacity-10">
+            <h3 className="text-gray-800 text-xl font-bold mb-4">Convenient Access</h3>
+            <p className="text-sm text-gray-900">
+              Access professional healthcare services anytime, anywhere with our easy-to-use telehealth platform.
+            </p>
+            <button className="text-sm text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 tracking-wide mt-6 rounded">
+              Learn More
+            </button>
+          </div>
+          <div className="p-6 bg-white bg-opacity-30 backdrop-blur-md rounded-lg shadow-lg border border-white border-opacity-10">
+            <h3 className="text-gray-800 text-xl font-bold mb-4">Secure and Private</h3>
+            <p className="text-sm text-gray-600">
+              Our platform ensures all consultations are conducted with the utmost privacy and security, protecting your personal information.
+            </p>
+            <button className="text-sm text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 tracking-wide mt-6 rounded">
+              Learn More
+            </button>
+          </div>
+          <div className="p-6 bg-white bg-opacity-30 backdrop-blur-md rounded-lg shadow-lg border border-white border-opacity-10">
+            <h3 className="text-gray-800 text-xl font-bold mb-4">Flexible Scheduling</h3>
+            <p className="text-sm text-gray-600">
+              Enjoy flexible scheduling options that fit your lifestyle, ensuring you get the care you need when you need it.
+            </p>
+            <button className="text-sm text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 tracking-wide mt-6 rounded">
+              Learn More
+            </button>
+          </div>
+          <div className="p-6 bg-white bg-opacity-30 backdrop-blur-md rounded-lg shadow-lg border border-white border-opacity-10">
+            <h3 className="text-gray-800 text-xl font-bold mb-4">Quality Care</h3>
+            <p className="text-sm text-gray-600">
+              Experience high-quality healthcare services through our advanced telehealth solutions, designed to meet your needs.
+            </p>
+            <button className="text-sm text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 tracking-wide mt-6 rounded">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

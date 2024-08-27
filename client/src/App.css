@@ -1,10 +1,14 @@
+
+
+
+
 body {
- background: #110350; /* Gives a parallax-like effect when scrolling */
+ /* background:rgb(88, 82, 82) !important; */
   
   margin: 0;
   padding-top: 60px;
   font-family: 'Roboto', sans-serif;
-  color: #fff; /* Ensures text is readable on darker backgrounds */
+  color: #000000; /* Ensures text is readable on darker backgrounds */
   overflow-x: hidden;
   -webkit-animation: heartbeat 5s infinite ease-in-out;
           animation: heartbeat 5s infinite ease-in-out; /* Heartbeat animation */
@@ -42,8 +46,8 @@ p {
 
 /* Buttons */
 button {
-  background-color: #ff4500;
-  color: white;
+  background-color: #fcdfd4;
+  color: black;
   border: none;
   border-radius: 30px;
   padding: 10px 20px;
@@ -65,16 +69,7 @@ button:active {
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  body {
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(255, 124, 0, 1) 0%,
-      rgba(255, 165, 0, 1) 25%,
-      rgba(241, 182, 19, 1) 50%,
-      rgba(0, 31, 116, 1) 75%,
-      rgba(19, 30, 37, 1) 100%
-    );
-  }
+
 
   nav {
     padding: 10px;
