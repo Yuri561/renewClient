@@ -1,81 +1,53 @@
-import { useEffect, useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import Testimonials from './Testimonials';
+import React from 'react';
 
-const MainSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsVisible(entry.isIntersecting);
-        });
-      },
-      { threshold: 0.1 } // Adjust as needed to control when the animation triggers
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, staggerChildren: 0.3 } }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } }
-  };
-
+const ServicesSection: React.FC = () => {
   return (
-    <div className="my-4 font-[sans-serif]">
-      <div className="max-w-8xl max-md:max-w-xl mx-auto">
-        <motion.div
-          className="bg-purple-800 grid md:grid-cols-2 items-center p-9 lg:gap-32 md:gap-16 gap-9"
-          ref={sectionRef}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isVisible ? 'visible' : 'hidden'}
-        >
-          <Testimonials />
-          <div className="text-white font-extrabold">
-            <motion.h1
-              className="text-4xl text-white md:text-5xl lg:text-6xl leading-tight"
-              variants={itemVariants}
-            >
-              Discover Your Inner Strength
-            </motion.h1>
-            <motion.h2
-              className="sm:text-base text-white md:text-lg lg:text-xl font-extrabold mt-4"
-              variants={itemVariants}
-            >
-              Benefits of Joining Our Community
-            </motion.h2>
-            <motion.ul variants={itemVariants}>
-              <motion.li className="text-sm mt-4 leading-relaxed">
-                Customized Telehealth Plans designed to meet individual mental health needs for optimal outcomes.
-              </motion.li>
-    
-              <motion.li className="text-sm leading-relaxed">
-                Private and Secure Online Consultations, ensuring your comfort and confidentiality.
-              </motion.li>
-              
-            </motion.ul>
+    <div className="bg-white sm:px-6 p-4 font-[sans-serif]">
+      <div className="max-w-2xl mx-auto">
+        <div>
+          <h2 className="text-4xl font-extrabold text-gray-800 mb-4">Our Services</h2>
+          <p className="text-gray-500 text-sm mt-4">
+            At Renewing of the Mind PLLC, we offer key services to support your mental well-being and health, all provided with the highest level of care and confidentiality.
+          </p>
+        </div>
+        <hr className="my-10" />
+        <div className="grid gap-16">
+          <div>
+            <h3 className="text-2xl font-bold text-gray-800">Telehealth Consultations</h3>
+            <div className="mt-4">
+              <p className="text-gray-500 text-sm">
+                Access virtual consultations with healthcare professionals from the comfort of your home, providing the care you need remotely.
+              </p>
+            </div>
           </div>
-        </motion.div>
+          <div>
+            <h3 className="text-2xl font-bold text-gray-800">Medication Management Services</h3>
+            <div className="mt-4">
+              <p className="text-gray-500 text-sm">
+                Our medication management ensures your treatment is carefully monitored and adjusted for optimal results.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-gray-800">Virtual Health Support</h3>
+            <div className="mt-4">
+              <p className="text-gray-500 text-sm">
+                Receive comprehensive virtual support tailored to your individual health needs, ensuring consistent and compassionate care.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-gray-800">Confidential, Compassionate Care</h3>
+            <div className="mt-4">
+              <p className="text-gray-500 text-sm">
+                We prioritize confidentiality and empathy, ensuring a safe space for you to receive the care you deserve.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default MainSection;
+export default ServicesSection;

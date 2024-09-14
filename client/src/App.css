@@ -1,101 +1,17 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); */
 
 body, html {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  color: #000000; /* Ensures text is readable on lighter backgrounds */
-  background: rgb(76, 50, 148) !important; /* Light lavender background */
+
+  color: #ffffff; /* Ensures text is readable on darker backgrounds */
+  background: #0B3D91 !important; /* Dark blue background */
   overflow-x: hidden;
 }
 
-/* Heartbeat Animation */
-@-webkit-keyframes heartbeat {
-  0%, 100% {
-    background-size: 100% 100%;
-  }
-  50% {
-    background-size: 105% 105%; /* Slight expansion to mimic heartbeat */
-  }
-}
-@keyframes heartbeat {
-  0%, 100% {
-    background-size: 100% 100%;
-  }
-  50% {
-    background-size: 105% 105%; /* Slight expansion to mimic heartbeat */
-  }
+.cursive-text {
+  font-family: 'Pacifico', cursive; /* Example of a cursive font */
 }
 
-/* Text Styling */
-h1, h2, h3, h4, h5, h6 {
-  color: #110350;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Adds subtle depth to text */
-  font-family: 'Montserrat', sans-serif; /* New font for headings */
-}
-
-p {
-  line-height: 1.6;
-  color: #181717;
-}
-
-/* Glass Effect Styling */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px); /* Frosted glass effect */
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-/* Buttons */
-button {
-  background-color: #fcdfd4;
-  color: black;
-  border: none;
-  border-radius: 30px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ff6347;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-  nav {
-    padding: 10px;
-  }
-
-  nav a {
-    margin: 0 10px;
-  }
-
-  section {
-    padding: 40px 0;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}
