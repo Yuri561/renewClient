@@ -7,7 +7,7 @@ import HeroImage from './HeroImage';
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="hero-section font-sans bg-white pt-16 mx-auto overflow-hidden">
+    <div className="hero-section font-sans pt-4 mx-auto overflow-hidden">
       <div className="flex flex-col items-center max-w-8xl mx-auto p-3">
 
         <HeroImage />

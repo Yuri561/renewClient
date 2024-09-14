@@ -1,52 +1,69 @@
-import { NavLink } from 'react-router-dom';
-import { X } from 'lucide-react';
-import Logo from '../../../public/LOGO.png';
+import React from 'react';
+import { Tooltip } from 'react-tooltip';
+import { Link } from 'react-router-dom';
+import { Home, Wallet, PlusCircle, Settings, User } from 'lucide-react';
 
-const NavMenu: React.FC<{ isMenuOpen: boolean; toggleMenu: () => void }> = ({ isMenuOpen, toggleMenu }) => {
-  const navLinkArr = [
-    { name: 'Home', to: '/', exact: true },
-    { name: 'Programs', to: '/programs' },
-    { name: 'About', to: '/about-section' },
-    { name: 'Provider', to: '/provider' },
-  ];
-
+const Header: React.FC = () => {
   return (
-    <div id="collapseMenu" className="lg:flex lg:items-center">
-      {isMenuOpen && (
-        <button
-          id="toggleClose"
-          className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3"
-          onClick={toggleMenu}
+    <header className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2 dark:bg-gray-700 dark:border-gray-600">
+      <div className="grid h-full max-w-lg grid-cols-5 mx-auto">
+        {/* Home Button */}
+        <Link
+          to="/home"
+          className="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
+          data-tooltip-id="tooltip-home"
         >
-          <X className="w-4 h-4 fill-black" />
-        </button>
-      )}
-      <ul className={`lg:flex lg:gap-x-10 ${isMenuOpen ? 'block' : 'hidden'} max-lg:fixed max-lg:bg-[#151d20] max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:px-10 max-lg:py-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50`}>
-        <li className="mb-6 hidden max-lg:block">
-          <img src={Logo} alt="Logo" className="w-20 rounded-full items-center" />
-        </li>
-        {navLinkArr.map((link, index) => (
-          <li
-            key={index}
-            className="max-lg:border-b max-lg:py-3 relative lg:hover:after:absolute lg:after:bg-black lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:-bottom-4 lg:after:transition-all lg:after:duration-300"
-          >
-            <NavLink
-              to={link.to}
-              className={({ isActive }) =>
-                isActive
-                  ? 'text-yellow-500 block text-[15px] font-medium lg:after:absolute lg:after:bg-black lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:-bottom-4 lg:after:transition-all lg:after:duration-300'
-                  : 'text-yellow-500 block text-[15px] font-medium lg:after:absolute lg:after:bg-black lg:after:w-0 lg:after:h-[2px] lg:after:block lg:after:-bottom-4 lg:after:transition-all lg:after:duration-300 lg:hover:after:w-full'
-              }
-              onClick={toggleMenu}
-              end={link.exact}
-            >
-              {link.name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </div>
+          <Home className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
+          <span className="sr-only">Home</span>
+        </Link>
+        <Tooltip id="tooltip-home" place="top" content="Home" />
+
+        {/* Wallet Button */}
+        <Link
+          to="/wallet"
+          className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+          data-tooltip-id="tooltip-wallet"
+        >
+          <Wallet className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
+          <span className="sr-only">Wallet</span>
+        </Link>
+        <Tooltip id="tooltip-wallet" place="top" content="Wallet" />
+
+        {/* New Item Button */}
+        <Link
+          to="/new"
+          className="inline-flex items-center justify-center w-10 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
+          data-tooltip-id="tooltip-new"
+        >
+          <PlusCircle className="w-4 h-4 text-white" />
+          <span className="sr-only">New item</span>
+        </Link>
+        <Tooltip id="tooltip-new" place="top" content="Create new item" />
+
+        {/* Settings Button */}
+        <Link
+          to="/settings"
+          className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+          data-tooltip-id="tooltip-settings"
+        >
+          <Settings className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
+          <span className="sr-only">Settings</span>
+        </Link>
+        <Tooltip id="tooltip-settings" place="top" content="Settings" />
+
+        {/* Profile Button */}
+        <Link
+          to="/profile"
+          className="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
+          data-tooltip-id="tooltip-profile"
+        >
+          <User className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
+          <span className="sr-only">Profile</span>
+        </Link>
+        <Tooltip id="tooltip-profile" place="top" content="Profile" />
+      </div>
+    </header>
   );
 };
 
-export default NavMenu;
+export default Header;

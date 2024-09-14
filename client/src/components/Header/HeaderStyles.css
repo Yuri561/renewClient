@@ -1,4 +1,4 @@
-/* Base styles */
+Base styles */
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -45,4 +45,5 @@
 	}
 }
 
-/* Add more specific styles as needed */
+/* Add more specific styles as needed
+*/
