@@ -7,8 +7,9 @@ body, html {
   margin: 0;
 
   color: #ffffff; /* Ensures text is readable on darker backgrounds */
-  background: #0B3D91 !important; /* Dark blue background */
+  background: #edeff1 !important; /* Dark blue background */
   overflow-x: hidden;
+  z-index: 10;
 }
 
 .cursive-text {

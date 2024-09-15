@@ -9,7 +9,7 @@ const LocationAndDescription: React.FC = () => {
   const position: [number, number] = [35.8117, -78.7846]; // Coordinates for Cary, NC
 
   return (
-    <div className="bg-gray-100 px-6 py-12 z-10">
+    <div className="bg-gray-100 px-6 py-12 z-20" id='location'>
       <div className="container mx-auto p-6 bg-white rounded-lg shadow-md mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Map Section */}
@@ -32,7 +32,7 @@ const LocationAndDescription: React.FC = () => {
             <h2 className="text-4xl font-extrabold text-purple-700 mb-4">Renewing of the Mind PLLC</h2>
             <hr className="border-purple-500 mb-4" />
             <p className="text-gray-800 text-base leading-6 mb-6">
-              At Renewing of the Mind PLLC, we provide telehealth services and medication management to support your mental health. 
+              At Renewing of the Mind PLLC, we provide telehealth services and medication management to support your mental health.
               Experience compassionate care from the comfort of your home.
             </p>
 

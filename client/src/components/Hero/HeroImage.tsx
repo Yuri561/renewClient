@@ -2,7 +2,7 @@ import './HeroImageCarousel.css';
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="font-[Dancing Script] w-full mt-10 py-8 px-6">
+    <div className="font-[Dancing Script]  w-full mt-10 py-8 px-6">
       <div className="max-w-9xl   mx-auto text-center  bg-white border border-white border-opacity-10 rounded-xl shadow-md py-12 px-6 relative z-10">
         <h2 className="md:text-5xl text-3xl font-bold md:leading-[55px] text-[#000000]">
           Renewing of the Mind PLLC
