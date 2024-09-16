@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
           <p className="text-md leading-relaxed">
             If you need help or want more information, feel free to contact us:
           </p>
-          <p className="text-lg font-semibold mt-3">Phone: <a href="tel:+1234567890" className="text-blue-500">+1 (234) 567-890</a></p>
+          <p className="text-lg font-semibold mt-3">Phone: <a href="tel:+1234567890" className="text-blue-500">+1 (919) 446-4999</a></p>
           <p className="text-lg">Email: <a href="mailto:info@renewingofthemind.com" className="text-blue-500">info@renewingofthemind.com</a></p>
         </div>
         
@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
           <p className="text-md leading-relaxed">
             While we primarily offer telehealth services, we also offer in-person consultations. Our office is located in a peaceful and private setting, designed to make you feel comfortable and welcome.
           </p>
-          <p className="text-lg font-semibold mt-3">Address: 1234 Wellness Way, Mindtown, USA</p>
+          <p className="text-lg font-semibold mt-3">Address: 5000 Centregreen Way, Cary, USA</p>
         </div>
         
         <div>
