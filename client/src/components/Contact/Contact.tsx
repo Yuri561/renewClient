@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
           <p className="text-md leading-relaxed">
             While we primarily offer telehealth services, we also offer in-person consultations. Our office is located in a peaceful and private setting, designed to make you feel comfortable and welcome.
           </p>
-          <p className="text-lg font-semibold mt-3">Address: 5000 Centregreen Way, Cary, USA</p>
+          <p className="text-lg font-semibold mt-3">Address: 5000 Centregreen Way, Cary, NC, 27513 </p>
         </div>
         
         <div>
