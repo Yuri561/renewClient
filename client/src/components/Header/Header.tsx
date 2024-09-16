@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tooltip } from 'react-tooltip';
-import { Link } from 'react-router-dom';
+
 import { Home, Info, MapPin, Briefcase, Phone } from 'lucide-react';
 
 const Header: React.FC = () => {
