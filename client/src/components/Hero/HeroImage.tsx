@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
 
       <div className="xl:max-w-9xl max-w-9xl mx-auto mt-12">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 gap-6">
-          <div className="p-6 bg-white   rounded-lg shadow-lg border border-white border-opacity-10">
+          <div className="p-6 bg-white   rounded-lg shadow-lg border border-white border-opacity-10 hover:translate-y-1 hover:shadow-2xl">
             <h2 className="text-gray-900 text-xl font-bold mb-4">Convenient Access</h2>
             <p className="text-sm text-gray-900">
               Access professional healthcare services anytime, anywhere with our easy-to-use telehealth platform.
@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
 
             </div>
           </div>
-          <div className="p-6 bg-white   rounded-lg shadow-lg border border-white border-opacity-10">
+          <div className="p-6 bg-white   rounded-lg shadow-lg border border-white border-opacity-10 hover:translate-y-1 hover:shadow-2xl">
             <h3 className="text-gray-800 text-xl font-bold mb-4">Secure and Private</h3>
             <p className="text-sm text-gray-900">
               Our platform ensures all consultations are conducted with the utmost privacy and security, protecting your personal information.
@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
 
             </div>
           </div>
-          <div className="p-6 bg-white rounded-lg shadow-lg border border-white border-opacity-10">
+          <div className="p-6 bg-white rounded-lg shadow-lg border border-white border-opacity-10 hover:translate-y-1 hover:shadow-2xl">
             <h3 className="text-gray-800 text-xl font-bold mb-4">Flexible Scheduling</h3>
             <p className="text-sm text-gray-900">
               Enjoy flexible scheduling options that fit your lifestyle, ensuring you get the care you need when you need it.
@@ -50,7 +50,7 @@ const HeroSection: React.FC = () => {
 
             </div>
           </div>
-          <div className="p-6 bg-white rounded-lg shadow-lg border border-white border-opacity-10">
+          <div className="p-6 bg-white rounded-lg shadow-lg border border-white border-opacity-10 hover:translate-y-1 hover:shadow-2xl">
             <h3 className="text-gray-800 text-xl font-bold mb-4">Quality Care</h3>
             <p className="text-sm text-gray-900">
               Experience high-quality healthcare services through our advanced telehealth solutions, designed to meet your needs.
