@@ -8,17 +8,17 @@ const Footer: React.FC = () => {
 
         <ul className="flex space-x-6 gap-y-2 max-lg:justify-center flex-wrap">
           <li>
-            <a href="#telehealth" className="text-[15px] hover:text-white">
+            <a href="#services" className="text-[15px] hover:text-white">
               Telehealth
             </a>
           </li>
           <li>
-            <a href="#medication-management" className="text-[15px] hover:text-white">
+            <a href="#services" className="text-[15px] hover:text-white">
               Medication Management
             </a>
           </li>
           <li>
-            <a href="#in-person-sessions" className="text-[15px] hover:text-white">
+            <a href="#services" className="text-[15px] hover:text-white">
               In-Person Sessions
             </a>
           </li>

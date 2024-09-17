@@ -1,4 +1,5 @@
 import React from 'react';
+import Zoom from '/zoom.png'
 
 const LocationAndDescription: React.FC = () => {
 
@@ -9,13 +10,8 @@ const LocationAndDescription: React.FC = () => {
           
           {/* Map Section */}
           <div className="flex justify-center">
-            <iframe
-              width="100%"
-              height="320"
-              frameBorder="0"
-              style={{ border: 0 }}
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-78.8500%2C35.7700%2C-78.7000%2C35.8500&layer=mapnik"
-              allowFullScreen
+            <img src={Zoom}
+            className='w-30 h-30 '
             />
           </div>
 
@@ -24,9 +20,9 @@ const LocationAndDescription: React.FC = () => {
             <h2 className="text-4xl font-extrabold text-purple-700 mb-4">Renewing of the Mind PLLC</h2>
             <hr className="border-purple-500 mb-4" />
             <p className="text-gray-800 text-base leading-6 mb-6">
-              At Renewing of the Mind PLLC, we provide telehealth services and medication management to support your mental health.
-              Experience compassionate care from the comfort of your home.
-            </p>
+  At Renewing of the Mind PLLC, we provide telehealth services and medication management to support your mental health.
+  Experience compassionate care from the comfort of your home. You can connect with us virtually through Zoom or Microsoft Teams for added convenience and flexibility.
+</p>
 
             <ul className="list-disc text-gray-800 text-base space-y-2 pl-4">
               <li>Telehealth Consultations</li>
@@ -36,9 +32,12 @@ const LocationAndDescription: React.FC = () => {
             </ul>
 
             <div className="mt-8">
-              <a href="https://calendly.com/admin-renewingofthemindpllc/30min" className="text-purple-600 text-lg font-semibold hover:underline">
-                Get Started
+            <button className="text-sm text-white bg-blue-600 transform hover:scale-110 transition duration-300 ease-in-out px-4 py-2 tracking-wide mt-6 rounded">
+
+              <a href="https://calendly.com/admin-renewingofthemindpllc/30min" className="text-white text-lg font-semibold">
+                Schedule session
               </a>
+              </button>
             </div>
 
             <hr className="border-purple-500 mt-8" />
